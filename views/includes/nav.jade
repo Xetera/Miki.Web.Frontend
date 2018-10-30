@@ -1,0 +1,36 @@
+- var loggedIn = false;
+
+div.tab-header.nav
+    div.blur-bg
+    ul(class='#{page_title}')
+        li
+            a(href="/")
+                i.far.fa-home
+                p Home
+        li
+            a(href="/commands" target="_blank" rel="noopener")
+                i.far.fa-chevron-right
+                p Commands
+        li
+            a(href="/about")
+                i.far.fa-info-circle
+                p About
+        li
+            a(href="/donate")
+                i.fas.fa-dollar-sign
+                p Donate
+        li
+            a(href="https://blog.miki.ai")
+                i.far.fa-pen
+                p Blog
+
+
+        if loggedIn
+            a(href="/profile")
+                li
+                    i.material-icons account_circle
+                    p Profile
+            a(href="/dashboard")
+                li
+                    i.material-icons settings
+                    p Dashboard

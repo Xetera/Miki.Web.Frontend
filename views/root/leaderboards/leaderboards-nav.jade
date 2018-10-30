@@ -1,0 +1,38 @@
+extends templates/base
+block page
+    - var page_title = 'leaderboards'
+    h1.first Leaderboards
+    include includes/nav
+    div.content
+        .about-section
+            .about-tag
+                div.blur-bg(style="background: url('/img/miki_more_blur_bg.jpg') no-repeat center center !important; background-size: cover !important; filter: brightness(0.8) blur(3px)")
+                    img(src="https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/2.png")
+                .about-content.center
+                    a(href="/leaderboards/experience")
+                        i.far.fa-angle-double-up
+                        | Experience
+
+            .about-tag
+                div.blur-bg(style="background: url('/img/miki_more_blur_bg.jpg') no-repeat center center !important; background-size: cover !important; filter: brightness(0.8) blur(3px)")
+                    img(src="https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/2.png")
+                .about-content.center
+                    a(href="/leaderboards/reputation")
+                        i.fas.fa-heart
+                        | Reputation
+
+            .about-tag
+                div.blur-bg(style="background: url('/img/miki_more_blur_bg.jpg') no-repeat center center !important; background-size: cover !important; filter: brightness(0.8) blur(3px)")
+                    img(src="https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/2.png")
+                .about-content.center
+                    a(href="/leaderboards/currency")
+                        i.fas.fa-diamond
+                        | Currency
+
+            .about-tag
+                div.blur-bg(style="background: url('/img/miki_more_blur_bg.jpg') no-repeat center center !important; background-size: cover !important; filter: brightness(0.8) blur(3px)")
+                    img(src="https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/2.png")
+                .about-content.center
+                    a(href="/leaderboards/commands")
+                        i.far.fa-chevron-right
+                        | Commands

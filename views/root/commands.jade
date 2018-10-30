@@ -1,0 +1,34 @@
+extends templates/base
+block page
+    - var page_title = 'commands'
+    -
+        var commands = [
+        {name: 'help', description: 'Help command gives you list of modules along with its respective commands.', usage: '>help', aliases: 'None'},
+        {name: 'help', description: 'Get help', usage: '>help', aliases: 'None'},
+        {name: 'help', description: 'Get help', usage: '>help', aliases: 'None'},
+        {name: 'help', description: 'Get help', usage: '>help', aliases: 'None'},
+        {name: 'help', description: 'Get help', usage: '>help', aliases: 'None'},
+        ]
+
+    h1.first commands
+    include includes/nav
+    div.content.commands
+        h2.fm >miki
+        p.
+            Miki has a huge range of commands for you to chose from.
+            <br>
+            We want you to have the power to use Miki to it's full potential so we list every command available here!
+
+        div.tabs
+            table
+                thead
+                    tr
+                        th Command
+                        th Description
+                        th Example
+                tbody
+                each command in commands
+                    tr
+                        td= command.name
+                        td= command.description
+                        td= command.usage

@@ -1,0 +1,38 @@
+extends templates/base
+block page
+    - var page_title = 'donate'
+    h1.first Donate
+    include includes/nav
+    .content
+      h3 Feeling generous?
+      hr
+      p
+        | Miki is a bot that is growing very fast, and to maintain a bot this big I have to take a lot of time from my daily life and focus on improving Miki for you all to enjoy. Therefore I've set up a few ways for you, the user to donate and support Miki.
+      .donate-section
+        .side
+          h3 #[i.fab.fa-patreon] Patreon
+          p For an easy way to check how much money I am expecting to get for the month I use patreon as a subscription-based donation platform. We offer rewards from extra personalized profiles to new command commissions per month!
+          a(href="https://www.patreon.com/bePatron?u=2542689", data-patreon-widget-type="become-patron-button" target="_blank" rel="noopener")
+            img(src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png")
+        .side
+          h3 #[i.fas.fa-coffee] Ko-fi
+          p
+            | Not a fan of commitment? No worries, we also support one-time donations with Ko-fi! You get instant rewards if you pass your discord user ID at the end of your message!
+          a.btn(href="https://ko-fi.com/velddy" target="_blank" rel="noopener")
+            img(src="img/ko-fi.png")
+        .side
+          h3 #[i.fab.fa-bitcoin] Bitcoin
+          p
+            | Do you not like money? Don't worry, I'm hip and young developer that (not really) believes in the "blockchain" technology. Therefore I made a bitcoin wallet.
+          div.wallets
+            p #[i.fab.fa-btc] BTC: #[code 1FWRxg7r6hKQg4Lf46ot3o8RUSLrBGuddu]
+            p #[i.fab.fa-ethereum] ETH: #[code 0x3388F0b09d36d10FA8276854EA6b950A6183Bac4]
+            p Or DM Veld#0001 for other currencies
+
+        .side
+          h3 #[i.fas.fa-hand-heart] Alternative
+          p If you don't really have access to money, there is still a few things you could do!
+            ul
+              li Consider participating in our #[a(href="https://trello.com/b/SdjIVMtx/miki") trello] discussion boards to finetune new features, so we can get a better grasp of what you guys would like to see next!
+              li Vote for #[a(href="https://discordbots.org/bot/160105994217586689") Miki on Discordbots.org]
+              li Join our #[a(href="https://discord.gg/veUGD9t") community] and help other users!

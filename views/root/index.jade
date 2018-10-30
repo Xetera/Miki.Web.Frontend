@@ -1,0 +1,146 @@
+extends templates/base
+block page
+  - var page_title = 'home'
+  br
+  div.lander
+    div.header
+      h1 MIKI
+      div.sub-header
+        h3 Your solution to a great Discord Community!
+        h4 Serving #{now.toLocaleString()} users!
+        div
+          a(href="https://discordapp.com/oauth2/authorize?&client_id=160185389313818624&scope=bot" class="button")
+            p Invite
+          a(href="https://discord.gg/veUGD9t" class="button")
+            p Support server
+    video(autoplay loop id="landing-video")
+      source(src="/img/webms/landing.webm" type="video/webm")
+    script.
+      document.getElementById('landing-video').playbackRate = 1.1;
+  br
+  include includes/nav
+
+  .content.temp
+    .slider-wrapper
+      ul.slider
+        - for (var i = 0; i < 3; i++) {
+          li
+            a(href="https://blog.miki.ai/#{slides[Math.min(i, slides.length - 1)].slug}")
+              img(src="https://blog.miki.ai#{slides[Math.min(i, slides.length - 1)].feature_image}")
+              h2 #{slides[Math.min(i, slides.length - 1)].title}
+        - }
+
+  script(src="/js/slider.js")
+
+  .index-section.left
+    .tab-header
+      .blur-bg
+      h2 #[i.fas.fa-users] Community
+    .content
+      .index-row.left
+        img(src="img/miki_index_1b.png")
+        .index-descriptions
+          .index-descript
+            div
+              h2
+                i.fal.fa-user-circle
+                | Profiles
+              p Keep track of your hard earned achievements, mekos and your loving companions! Each user can customize their profile and share it with the world.
+          .index-descript
+            div
+              h2
+                i.fal.fa-clipboard-list
+                | Role management
+              p Allow people to unlock new abilities with help of Miki's advanced role management where people can earn by being active on your server, or buy the roles with our Mekos currency! The choice is completely yours!
+          .index-descript
+            div
+              h2
+                i.fal.fa-trophy
+                | Achievements
+              p Get rewarded by finding small easter eggs and achieving new heights in Miki's community! These can range from doing a silly task like using the info command, to reaching level 100 on a server!
+          .index-descript
+            div
+              h2
+                i.fal.fa-heart
+                | Marriages
+              p You can marry other users with Miki being your personal officiant! You can marry up to 15 people, because we believe everyone deserves a little bit of love!
+
+  .index-section.right
+    .tab-header
+      .blur-bg
+      h2 Complete server control #[i.fas.fa-cogs]
+    .content
+      .index-row.right
+        img(src="img/miki_index_4c.png")
+        .index-descriptions
+          .index-descript
+            div
+              h2
+                | Utility
+                i.far.fa-cogs
+              p Mikis not only just for fun, she is a real handy dandy when it comes to reminding you of your mom's birthday, or when a buddy is being a real jerk you can shut him down by doing a swift kick!
+          .index-descript
+            div
+              h2
+                | Administration
+                i.far.fa-edit
+              p Miki is also a stone cold admin for you. Give your worst enemies a ban and smack them a DM with details of how you'd ban them all over again!
+          .index-descript
+            div
+              h2
+                | Pastas
+                i.far.fa-copy
+              p Miki has a big library of pastas that you can use to keep notes on something, or even to create a text-based adventure! You can keep your servers rules in here to easily bring them up when needed, the possibilities are endless!
+
+  .index-section.left
+    .tab-header
+      .blur-bg
+      h2 #[i.fas.fa-star-exclamation] Uncover Miki's potential!
+    .content
+      .index-row.left
+        img(src="img/miki_index_2c.png")
+        .index-descriptions
+          .index-descript
+            div
+              h2
+                i.far.fa-angle-double-up
+                | Experience
+              p Whenever users send messages they receive experience points, climb the leaderboards, and earn bragging rights!
+          .index-descript
+            div
+              h2
+                i.far.fa-diamond
+                | Currency
+              p Earn currency by being active and using daily bonusses, become the richest person on your server for the fame and the bragging rights! You can also spend the currency on upgrades for your profile!
+          .index-descript
+            div
+              h2
+                i.far.fa-gamepad
+                | Minigames
+              p Now that you've acquired currency, it's time to go big or go home. Bring your newfound virtual money to the casino and try to win a game against miki in blackjack, rock paper or scissors, slots, and more!
+
+  .index-section.right
+    .tab-header
+      .blur-bg
+      h2 Multilingual and more... #[i.fas.fa-language]
+    .content
+      .index-row.right
+        img(src="img/miki_index_3c.png")
+        .index-descriptions
+          .index-descript
+            div
+              h2
+                | Multilingual
+                i.far.fa-language
+              p Our community helped to translate Miki into #[strong 27] languages! From Dutch, Japanese and Russian to Chinese and Polish.
+          .index-descript
+            div
+              h2
+                | Dashboards &amp; Profiles
+                i.far.fa-users
+              p We're also currently working on a website dashboard, so you can control your profile and server settings online!
+          .index-descript
+            div
+              h2
+                | ... and more!
+              p We are consistently probing the community for more ideas and suggestions to add to Miki. #[a(href="https://feathub.com/Mikibot/Miki") Share] yours today!

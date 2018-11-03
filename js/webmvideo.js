@@ -1,0 +1,1 @@
+document.getElementById('landing-video').playbackRate = 1.1;

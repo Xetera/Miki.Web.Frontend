@@ -1,0 +1,37 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+}
+
+i{
+    padding-right: 20px;
+}
+
+.miki-bg
+{
+    background-image: url('/img/miki_blur_bg_opti.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.miki-bg-blur {
+    background-image: url('/img/miki_blur_bg_opti.jpg');
+}
+
+.rounded
+{
+    border-radius: 10px;
+}
+
+.seperated
+{
+    margin: 10px;
+}
+
+.navbar {
+    width: 100%;
+}

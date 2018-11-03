@@ -1,9 +1,10 @@
 extends templates/base
+
 block page
     -
       var people = [
         devs = [
-            {name: "Veld",      desc: "Breaker of builds / creator",  uid:"121919449996460033", github:"https://github.com/velddev", twitter: "https://twitter.com/memeki", twitch: "https://www.twitch.tv/velddev"},
+            {name: "Veld",      desc: "Lead Developer",  uid:"121919449996460033", github:"https://github.com/velddev", twitter: "https://twitter.com/memeki", twitch: "https://www.twitch.tv/velddev"},
             {name: "Vallode",   desc: "Bird collector",     uid:"129947119070085120", github:"https://github.com/vallode"},
             {name: "Fuzen",     desc: "Code connoisseur", uid:"default", github:"https://github.com/Fuzen-py"},
             {name: "GrammarJew",desc: "Github corrector",     uid:"default", github:"https://github.com/thegrammarjew"},
@@ -25,72 +26,69 @@ block page
         ]
       ]
 
-    h1.first About
-    include includes/nav
-    div.content
-      .about-split
-        .side
-          h1.bigger So, what's Miki?
-          hr
-          p Miki is a bot that focuses on community related events. She can do anything from playing games with you, to showing you progress, and ofcourse with memes. She has a little bit of everything and all features are made with hand by yours truly. Her design is based on the Vocaloid #[a(href="http://vocaloid.wikia.com/wiki/SF-A2_miki") SF-A2 Miki], but we give her a little bit of our own flair!
-      h1.nm The dev squad.
-      .about-section
-          each dev in devs
-              .about-tag
-                  if dev.bg
-                      div.blur-bg(style="background: url(#{dev.bg}) no-repeat center center !important; background-size: cover !important; filter: brightness(0.8) blur(3px)")
-                  else
-                      div.blur-bg(style="filter: none !important")
-                  if dev.uid
-                    .about-circle
-                        img(src="https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/#{dev.uid}.png")
-                  .about-content
-                      h2= dev.name
-                      if dev.desc
-                          p= dev.desc
-                      else
-                          p Developer
-                      .about-links
-                          if dev.github
-                              a(href=dev.github target="_blank" rel="noopener")
-                                  i.fab.fa-github.fa-2x(aria-hidden="true")
-                          if dev.twitter
-                              a(href=dev.twitter target="_blank" rel="noopener")
-                                  i.fab.fa-twitter.fa-2x(aria-hidden="true")
-                          if dev.twitch
-                              a(href=dev.twitch target="_blank" rel="noopener")
-                                  i.fab.fa-twitch.fa-2x(aria-hidden="true")
+    section.section.hero.is-medium.miki-bg
+        .container
+            h1.title.has-text-light So, what's Miki?
+            p.has-text-white Miki is a bot that focuses on community related events. She can do anything from playing games with you, to showing you progress, and ofcourse with memes. She has a little bit of everything and all features are made with hand by yours truly. Her design is based on the Vocaloid #[a(href="http://vocaloid.wikia.com/wiki/SF-A2_miki") SF-A2 Miki], but we give her a little bit of our own flair!
 
-      br
-      h1.nm The mod squad.
-      .about-section
-          each mod in mods
-              .about-tag
-                  if mod.bg
-                      div.blur-bg(style="background: url(#{mod.bg}) no-repeat center center !important; background-size: cover !important; filter: brightness(0.8) blur(3px)")
-                  else
-                      div.blur-bg(style="filter: none !important")
-                  if mod.uid
-                    .about-circle
-                        img(src="https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/#{mod.uid}.png")
-                  .about-content
-                      h2= mod.name
-                      if mod.desc
-                          p= mod.desc
-                      else
-                          p Moderator
-                      .about-links
-                          if mod.github
-                              a(href=mod.github target="_blank" rel="noopener")
-                                  i.fa.fa-github.fa-2x(aria-hidden="true")
-                          if mod.twitter
-                              a(href=mod.twitter target="_blank" rel="noopener")
-                                  i.fa.fa-twitter.fa-2x(aria-hidden="true")
-                          if mod.twitch
-                              a(href=mod.twitch target="_blank" rel="noopener")
-                                  i.fa.fa-twitch.fa-2x(aria-hidden="true")
-      br
-      h1.nm Alumni
-      div.about-mentions
-        for user in contribs
-            p= user
+    section.section.content
+        .container    
+            h1.nm Development team
+                .columns
+                    each dev in devs
+                        .card.column.seperated
+                            if dev.uid
+                            .card-image
+                                figure.image.rounded
+                                    img(src="https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/#{dev.uid}.png")
+                             .card-content
+                                .media-content
+                                    p.title= dev.name
+                                if dev.desc
+                                    p.subtitle= dev.desc
+                                else
+                                    p Developer
+                                .columns
+                                    if dev.github
+                                        .column
+                                            a(href=dev.github target="_blank" rel="noopener")
+                                                i.fab.fa-github.fa-2x(aria-hidden="true")
+                                    if dev.twitter
+                                        .column
+                                            a(href=dev.twitter target="_blank" rel="noopener")
+                                                i.fab.fa-twitter.fa-2x(aria-hidden="true")
+                                    if dev.twitch
+                                        .column
+                                            a(href=dev.twitch target="_blank" rel="noopener")
+                                                i.fab.fa-twitch.fa-2x(aria-hidden="true")
+
+    section.section.content
+        .container    
+            h1.nm Server moderators
+            .columns                
+                each mod in mods
+                    .card.column.seperated
+                        if mod.uid
+                            figure.image.rounded
+                                img(src="https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/#{mod.uid}.png")
+                        .about-content
+                            h2= mod.name
+                            if mod.desc
+                                p= mod.desc
+                            else
+                                p Moderator
+                            .about-links
+                                if mod.github
+                                    a(href=mod.github target="_blank" rel="noopener")
+                                        i.fa.fa-github.fa-2x(aria-hidden="true")
+                                if mod.twitter
+                                    a(href=mod.twitter target="_blank" rel="noopener")
+                                        i.fa.fa-twitter.fa-2x(aria-hidden="true")
+                                if mod.twitch
+                                    a(href=mod.twitch target="_blank" rel="noopener")
+                                        i.fa.fa-twitch.fa-2x(aria-hidden="true")
+    section.section
+        .container.content
+            h1.title Alumni
+            for user in contribs
+                    p= user

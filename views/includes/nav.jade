@@ -1,36 +1,18 @@
-- var loggedIn = false;
-
-div.tab-header.nav
-    div.blur-bg
-    ul(class='#{page_title}')
-        li
-            a(href="/")
-                i.far.fa-home
-                p Home
-        li
-            a(href="/commands" target="_blank" rel="noopener")
-                i.far.fa-chevron-right
-                p Commands
-        li
-            a(href="/about")
-                i.far.fa-info-circle
-                p About
-        li
-            a(href="/donate")
-                i.fas.fa-dollar-sign
-                p Donate
-        li
-            a(href="https://blog.miki.ai")
-                i.far.fa-pen
-                p Blog
-
+nav.navbar.is-transparent
+    .container
+        .navbar-brand
+            a.has-text-weight-bold.navbar-item(href="/") MIKI
+        .navbar-menu
+            .navbar-end
+                a.navbar-item(href="https://github.com/mikibot/miki.bot/wiki") #[i.fab.fa-terminal] &nbsp; Commands
+                a.navbar-item(href="/about") #[i.fab.fa-question] &nbsp; About    
+                a.navbar-item(href="/donate") #[i.fab.fa-moneybag] &nbsp; Donate
+                a.navbar-item(href="https://blog.miki.ai/") #[i.fab.fa-book] &nbsp; Blog
 
         if loggedIn
-            a(href="/profile")
-                li
-                    i.material-icons account_circle
-                    p Profile
-            a(href="/dashboard")
-                li
-                    i.material-icons settings
-                    p Dashboard
+            a.navbar-item(href="/profile")
+                i.material-icons account_circle
+                p Profile
+            a.navbar-item(href="/dashboard")
+                i.material-icons settings
+                p Dashboard

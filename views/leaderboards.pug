@@ -1,3 +1,4 @@
+extends templates/base
 mixin user(u)
     .box
         .columns.is-vcentered.is-mobile
@@ -33,10 +34,7 @@ mixin user(u)
         if category === 'experience'
             progress.is-radiusless.progress(max="1" value="#{(u.score - prevOutput) / (output - prevOutput)}")
 
-
-extends templates/base
 block page
-
     section.section.hero.is-small.miki-bg
         .container
             .columns.is-vcentered

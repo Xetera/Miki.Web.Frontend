@@ -1,23 +1,24 @@
 extends templates/base
 
 block page
-  section.section.hero.is-medium.miki-bg
-    .container
-      .columns.is-vcentered
-        .column.has-text-centered.content
-            h1.title.has-text-white.is-large MIKI
-            h2.subtitle
-              h3.has-text-grey-lighter Your solution to a great Discord Community!
-              div
-                a.button.is-large(href="https://discordapp.com/oauth2/authorize?&client_id=160185389313818624&scope=bot").seperated.is-info
-                  p #[i.fab.fa-discord] Invite
-                a.button.is-large(href="https://discord.gg/39Xpj7K").seperated.is-outlined.is-white
-                  p Support server
-        .column.is-hidden-touch.is-hidden-desktop-only
-          video(id="landing-video" autoplay muted loop).rounded
-            source(src="/img/webms/landing.webm" type="video/webm")
-          script
-            include ../js/webmvideo.js
+  section.section.hero.is-small.miki-bg
+    .hero-body
+      .container
+        .columns.is-vcentered
+          .column.content
+              h1.title.has-text-white MIKI
+              h2.subtitle
+                h3.has-text-grey-lighter Your solution to a great Discord Community!
+                div
+                  a.button.is-large(href="/invite?mikiai").seperated.is-info
+                    p #[i.fab.fa-discord] Invite
+                  a.button.is-large(href="https://discord.gg/39Xpj7K").seperated.is-outlined.is-white
+                    p Support server
+          .column.is-hidden-touch.is-hidden-desktop-only
+            video(id="landing-video" autoplay muted loop).rounded
+              source(src="/img/webms/landing.webm" type="video/webm")
+            script
+              include ../js/webmvideo.js
 
   .section.has-background-light
     .container
@@ -25,9 +26,9 @@ block page
       .tile.is-ancestor
         - for (var i = 0; i < 3; i++) {
             .tile.is-child
-              a(href="https://blog.miki.ai/#{slides[Math.min(i, slides.length - 1)].slug}")
+              a(href=`https://blog.miki.ai/${slides[Math.min(i, slides.length - 1)].slug}`)
                 p #{slides[Math.min(i, slides.length - 1)].title}
-                img(src="https://blog.miki.ai#{slides[Math.min(i, slides.length - 1)].feature_image}")
+                img(src=`https://blog.miki.ai${slides[Math.min(i, slides.length - 1)].feature_image}`)
 
         - }
 

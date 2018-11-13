@@ -1,8 +1,12 @@
-nav.navbar.is-transparent
+nav.navbar.is-transparent(id = "global-nav-bar")
     .container
         .navbar-brand
             a.has-text-weight-bold.navbar-item(href="/") MIKI
-        .navbar-menu
+            a.navbar-burger(data-target="global-nav-menu" aria-label="menu" role="button" aria-expanded="false")
+                span(aria-hidden="true")
+                span(aria-hidden="true")
+                span(aria-hidden="true")
+        .navbar-menu(id="global-nav-menu")
             .navbar-end
                 a.navbar-item(href="https://github.com/mikibot/miki.bot/wiki") Commands
                 a.navbar-item(href="/about") About    
@@ -16,3 +20,5 @@ nav.navbar.is-transparent
             a.navbar-item(href="/dashboard")
                 i.material-icons settings
                 p Dashboard
+script
+    include ../../js/navigation.js

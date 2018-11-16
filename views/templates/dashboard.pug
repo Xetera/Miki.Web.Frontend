@@ -1,0 +1,24 @@
+extends base
+block page
+  .container.section
+    .columns
+      .column.is-3
+        aside.menu
+         .dropdown#dashboard-guilds-dropdown
+            a.button(onclick="document.getElementById('dashboard-guilds-dropdown').classList.toggle('is-active')")
+              span.icon.is-small
+                img(src="https://via.placeholder.com/250")
+              span.seperated ${SelectedGuild}
+              span.icon.is-small
+                i.fas.fa-angle-down(aria-hidden="true")
+            .dropdown-menu
+              .dropdown-content
+                a.dropdown-item test
+        p.menu-label Configuration
+          ul.menu-list
+            li
+              a(href="/dashboard/home") Home
+              a(href="/dashboard/events") Events
+              a(href="/dashboard/modules") Modules
+      .column.is-9
+        block dashboard

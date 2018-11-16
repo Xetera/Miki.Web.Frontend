@@ -6,7 +6,7 @@ mixin user(u)
                 a #{u.rank}.
             .column
                 figure.image.is-64x64
-                    img.is-rounded(src='https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/#{u.id}.png' onerror="this.src='https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/default.png';")
+                    img.is-rounded(src=`https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/${u.id}.png` onerror="this.src='https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/default.png';")
             .column
                 a #{u.username}
 
@@ -32,7 +32,7 @@ mixin user(u)
                 if category === 'reputation'
                     p #{u.score.toLocaleString()} reputation
         if category === 'experience'
-            progress.is-radiusless.progress(max="1" value="#{(u.score - prevOutput) / (output - prevOutput)}")
+            progress.is-radiusless.progress(max="1" value=`${(u.score - prevOutput) / (output - prevOutput)}`)
 
 block page
     section.section.hero.is-small.miki-bg
@@ -54,7 +54,7 @@ block page
                 .has-text-centered.columns.is-mobile
                     if (pages.prev_url !== undefined)
                         .column
-                            a(href="#{pages.prev_url}") #[i.far.fa-chevron-left] Prev Page
+                            a(href=`${pages.prev_url}`) #[i.far.fa-chevron-left] Prev Page
                     if (pages.next_url !== undefined)
                         .column
-                            a(href="#{pages.next_url}") Next Page  #[i.far.fa-chevron-right]
+                            a(href=`${pages.next_url}`) Next Page  #[i.far.fa-chevron-right]

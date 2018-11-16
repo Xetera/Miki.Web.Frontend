@@ -2,12 +2,9 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
-h1 {
-    font-family: 'Raleway', sans-serif;
-}
-
-i{
-    padding-right: 20px;
+a {
+    font-weight: lighter;
+    color: rgb(101, 100, 104);
 }
 
 .miki-bg
@@ -22,16 +19,111 @@ i{
     background-image: url('/img/miki_blur_bg_opti.jpg');
 }
 
-.rounded
-{
-    border-radius: 10px;
-}
-
 .seperated
 {
     margin: 10px;
 }
 
-.navbar {
+.navbar-space {
+    padding-top: 50px;
+}
+
+.testimonial {
+    position: relative;
+    overflow: hidden;
+    margin: 10px auto;
+    min-width: 220px;
+    max-width: 310px;
     width: 100%;
+    color: #333;
+    text-align: left;
+    box-shadow: none !important;
+}
+
+.testimonial * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.testimonial img {
+    max-width: 100%;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin-right: 5px;
+    display: block;
+    z-index: 1;
+    position: absolute;
+    right: 60%;
+}
+
+.testimonial  blockquote {
+    margin: 0;
+    display: block;
+    border-radius: 8px;
+    position: relative;
+    background-color: ghostwhite;
+    padding: 30px 50px 65px 50px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0 0 -40px;
+    line-height: 1.6em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial blockquote:before, .testimonial blockquote:after {
+    font-family: 'Font Awesome 5 Pro';
+    content: "\f10d";
+    position: absolute;
+    font-size: 20px;
+    opacity: 0.3;
+    font-style: normal;
+}
+
+.testimonial  blockquote:before {
+    top: 35px;
+    left: 20px;
+}
+
+.testimonial  blockquote:after {
+    content: "\f10e";
+    right: 20px;
+    bottom: 35px;
+}
+
+.testimonial .author {
+    margin: 0;
+    height: 80px;
+    display: block;
+    text-align: left;
+    color: white;
+    padding: 0 35px;
+    position: relative;
+    z-index: 0;
+}
+
+.testimonial .author h5, .testimonial .author span {
+    left: 50%;
+    position: absolute;
+    opacity: 0.8;
+    padding: 3px 5px;
+}
+
+.testimonial .author h5 {
+    text-transform: capitalize;
+    bottom: 60%;
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: navy;
+}
+
+.testimonial .author span {
+    font-size: 0.8em;
+    color: white;
+    top: 50%;
+}
+
+.content-wrapper {
+    padding: 60px 0;
 }

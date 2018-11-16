@@ -5,8 +5,8 @@ block page
     .hero-body
       .container
         .columns.is-vcentered
-          .column.content
-              h1.title.has-text-white MIKI for Discord
+          .column.is-5.is-offset-1.content
+              h1.title.is-spaced.has-text-white MIKI for Discord
               h2.subtitle
                 h3.has-text-grey-lighter Your solution to a great Discord Community!
                 div
@@ -14,68 +14,91 @@ block page
                     p #[i.fab.fa-discord] Invite
                   a.button.is-large(href="https://discord.gg/39Xpj7K").seperated.is-outlined.is-white
                     p Support server
-          .column.is-hidden-touch.is-hidden-desktop-only
+          .column.is-5.is-offset-1.is-hidden-touch.is-hidden-desktop-only
             video(id="landing-video" autoplay muted loop).rounded
               source(src="/img/webms/landing.webm" type="video/webm")
             script
               include ../js/webmvideo.js
+    .hero-foot
 
-  .section.has-background-light
+  .section
     .container
-      h2.title News
-      .tile.is-ancestor
-        - for (var i = 0; i < 3; i++) {
-            .tile.is-child
-              a(href=`https://blog.miki.ai/${slides[Math.min(i, slides.length - 1)].slug}`)
-                p #{slides[Math.min(i, slides.length - 1)].title}
-                img(src=`https://blog.miki.ai${slides[Math.min(i, slides.length - 1)].feature_image}`)
+      .has-text-centered
+        h2.title Why to pick Miki?
+        p Miki has already won the hearts of millions of people, and continues to do so with her rich set of functions.
+      .columns
+          .section.column
+            .content
+              h2 #[i.fas.fa-users] Community
+              h3 Profiles
+              p Customize and show off your amazing little card!
+              h3 Role management
+              p Buy, earn, or get roles by opting in!
+              h3 Achievements
+              p The inner completionist inside of you is screaming for 100%-ing this!
+              h3 Marriages
+              p Everyone deserve a little bit of love!
 
-        - }
+          .section.column
+            .content
+              h2 #[i.fas.fa-cogs] Complete server control 
+              h3 Utility
+              p Miki's not only just playing around, She can also post reminders, or remove unwanted users.    
+              h3 Administration        
+              p Cleaning up rooms, banning users. all of these will be properly logged in your audit log!
+              h3 Pastas
+              p Your free post-it note collection!
 
-  .container
-    .columns
+      .columns
         .section.column
-          h2.title #[i.fas.fa-users] Community
           .content
-            h3 Profiles
-            p Customize and show off your amazing little card!
-            h3 Role management
-            p Buy, earn, or get roles by opting in!
-            h3 Achievements
-            p The inner completionist inside of you is screaming for 100%-ing this!
-            h3 Marriages
-            p Everyone deserve a little bit of love!
-
-        .section.column
-          h2.title #[i.fas.fa-cogs] Complete server control 
-          .content
-            h3 Utility
-            p Miki's not only just playing around, She can also post reminders, or remove unwanted users.    
-            h3 Administration        
-            p Cleaning up rooms, banning users. all of these will be properly logged in your audit log!
-            h3 Pastas
-            p Your free post-it note collection!
-
-    .columns
-      .section.column
             h2.title #[i.fas.fa-star-exclamation] Uncover Miki's potential!
-            .content
-              h3 Experience
-              p Whenever users send messages they receive experience points and climb the leaderboards.
-              h3 Currency
-              p Earn currency by being active and using daily bonuses, become the richest person on your server!
-              h3 Minigames
-              p Now that you've acquired currency, It's time to bring your newfound riches to the casino and win a game against miki in several games!
+            h3 Experience
+            p Whenever users send messages they receive experience points and climb the leaderboards.
+            h3 Currency
+            p Earn currency by being active and using daily bonuses, become the richest person on your server!
+            h3 Minigames
+            p Now that you've acquired currency, It's time to bring your newfound riches to the casino and win a game against miki in several games!
 
-      .section.column 
-            h2.title #[i.fas.fa-language] Multilingual and more...
-            .content
-              h3 Multilingual       
-              p Our community helped to translate Miki into #[strong 27] languages! From Dutch, Japanese and Russian to Chinese and Polish.
-              h3 Dashboards
-              p We're also currently working on a website dashboard, so you can control your profile and server settings online!        
-              h3 ... and more!
-              p We are consistently probing the community for more ideas and suggestions to add to Miki. #[a(href="https://suggestion.miki.ai") Share] yours today! 
+        .section.column 
+          .content
+            h2.title #[i.fas.fa-check] Always improving!
+            h3 Multilingual       
+            p Our community is helping us translate Miki into many languages! All from Europe to Asia, all major languages are included!
+            h3 Dashboards
+            p We're also currently working on a website dashboard, so you can control your profile and server settings online!        
+            h3 ... and more!
+            p We are consistently probing the community for more ideas and suggestions to add to Miki. #[a(href="https://suggestion.miki.ai") Share] yours today! 
+
+      .section.is-medium.section-secondary
+          .container
+            .title-wrapper.has-text-centered
+              h2.title.is-2.light-text.is-spaced People love Miki!
+              h3.subtitle.is-5 Here are some of our communities actively supporting Miki and her abilities to help your server
+              .content-wrapper
+                .columns.is-vcentered
+                  .column.is-4
+                    figure.testimonial
+                      blockquote.has-background-light When we were looking for a bot, there was nothing really that satisfied our needs. Until we found Miki, she has been keeping our family closer than ever!
+                      .author
+                        img(src="https://cdn.discordapp.com/avatars/160105994217586689/93a84d32028381533f6cda4157d7c806.png?size=256" alt="")
+                        h5.has-text-black Your server
+                        span.has-text-dark Accounting
+                  .column.is-4
+                    figure.testimonial
+                      blockquote Miki helps keep the flow of conversations going with her wide variety of fun commands in our server. She's great for small and large servers alike, providing both entertainment and utility!
+                      .author
+                        img(src="https://cdn.discordapp.com/icons/182730911266242560/c46324ecdb78fb72cf24964aebdda13c.png" alt="")
+                        h5.has-text-black itsn0tme
+                        span.has-text-dark Kongregation on Discord         
+                  .column.is-4
+                    figure.testimonial
+                      blockquote With so many customizations and commands, Miki is one of the ultimate utility and fun bots we've seen. And trust me, we've gone through plenty!
+                      .author
+                        img(src="https://cdn.discordapp.com/icons/233537266406916096/f9af2a6d68b9f88a63e03d3de74b8681.png" alt="")
+                        h5.has-text-black SevenFangs
+                        span.has-text-dark ESO SQUAD
+
 
     .section.is-vcentered.has-text-centered
       h2.title After all these points, do you really have a reason to not pick Miki for your Discord server?

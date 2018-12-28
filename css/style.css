@@ -9,14 +9,14 @@ a {
 
 .miki-bg
 {
-    background-image: url('/img/miki_blur_bg_opti.jpg');
+    background-image: url('/img/miki_blur_bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .miki-bg-blur {
-    background-image: url('/img/miki_blur_bg_opti.jpg');
+    background-image: url('/img/miki_blur_bg.jpg');
 }
 
 .seperated

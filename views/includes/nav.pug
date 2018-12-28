@@ -1,27 +1,27 @@
 .navbar-space
 nav.navbar.is-transparent.is-fixed-top(id = "global-nav-bar")
-    .container
-        .navbar-brand
-            a.has-text-weight-bold.navbar-item(href="/") MIKI
-            a.navbar-burger(data-target="global-nav-menu" aria-label="menu" role="button" aria-expanded="false")
-                span(aria-hidden="true")
-                span(aria-hidden="true")
-                span(aria-hidden="true")
-        .navbar-menu(id="global-nav-menu")
-            .navbar-end
-                a.navbar-item(href="https://github.com/mikibot/miki.bot/wiki") 
-                    p Commands
-                a.navbar-item(href="/about") 
-                    p About    
-                a.navbar-item(href="/donate") Donate
-                a.navbar-item(href="https://blog.miki.ai/") Blog
-                if loggedInUser != null
-                    .navbar-item.has-dropdown#user-nav-dropdown
-                        a.navbar-link(onclick="document.getElementById('user-nav-dropdown').classList.toggle('is-active')") #{loggedInUser.username}
-                        .navbar-dropdown
-                            a.navbar-item(href=`/profile/${loggedInUser.id}`) Profile
-                            a.navbar-item(href="/dashboard/home") Dashboard            
-                else
-                    a.navbar-item(href="/login") Log in
+  .container
+    .navbar-brand
+      a.has-text-weight-bold.navbar-item(href="/") MIKI
+      a.navbar-burger(data-target="global-nav-menu" aria-label="menu" role="button" aria-expanded="false")
+        span(aria-hidden="true")
+        span(aria-hidden="true")
+        span(aria-hidden="true")
+    .navbar-menu(id="global-nav-menu")
+      .navbar-end
+        a.navbar-item(href="https://github.com/mikibot/miki.bot/wiki")
+          p Commands
+        a.navbar-item(href="/about")
+          p About
+        a.navbar-item(href="/donate") Donate
+        a.navbar-item(href="https://blog.miki.ai/") Blog
+        if loggedInUser != null
+          .navbar-item.has-dropdown#user-nav-dropdown
+            a.navbar-link(onclick="document.getElementById('user-nav-dropdown').classList.toggle('is-active')") #{loggedInUser.username}
+            .navbar-dropdown
+              a.navbar-item(href=`/profile/${loggedInUser.id}`) Profile
+              a.navbar-item(href="/dashboard/home") Dashboard
+        else
+          a.navbar-item(href="/login") Log in
 script
-    include ../../js/navigation.js
+  include ../../js/navigation.js

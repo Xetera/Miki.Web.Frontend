@@ -1,11 +1,11 @@
 extends templates/base
 block page
-    - var inviteUrl = "https://discordapp.com/oauth2/authorize?client_id=160185389313818624&scope=bot&permissions=1342565622"
-    .section.hero.is-fullheight
-        .hero-body
-            .container.content
-                h1.title Inviting Miki!
-                h2.subtitle We're redirecting you to Miki's invite! Hold on tight!
-                a.button(href="#{inviteUrl}") click here if that didn't work!
-    script 
-        | window.location.href = "!{inviteUrl}";
+  - var inviteUrl = "https://discordapp.com/oauth2/authorize?client_id=160185389313818624&scope=bot&permissions=1342565622"
+  .section.hero.is-fullheight
+    .hero-body
+      .container.content
+        h1.title Inviting Miki!
+        h2.subtitle We're redirecting you to Miki's invite! Hold on tight!
+        a.button(href="#{inviteUrl}") click here if that didn't work!
+  script
+    | window.location.href = "!{inviteUrl}";

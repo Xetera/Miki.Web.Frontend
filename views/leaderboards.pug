@@ -1,60 +1,60 @@
 extends templates/base
 mixin user(u)
-    .box
-        .columns.is-vcentered.is-mobile
-            .column.has-text-right
-                a #{u.rank}.
-            .column
-                figure.image.is-64x64
-                    img.is-rounded(src=`https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/${u.id}.png` onerror="this.src='https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/default.png';")
-            .column
-                a #{u.username}
+  .box
+    .columns.is-vcentered.is-mobile
+      .column.has-text-right
+        a #{u.rank}.
+      .column
+        figure.image.is-64x64
+          img.is-rounded(src=`https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/${u.id}.png` onerror="this.src='https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/default.png';")
+      .column
+        a #{u.username}
 
-            .column
-                if category === 'experience'
-                    - var experience = u.score
-                    - var level = 0
-                    - var output = 0
-                    - var prevOutput = 0;
-                    while (experience >= output)
-                        - prevOutput = output
-                        - output = 10 + (output + (level * 20))
-                        - level++
-
-                    p Level: #{level} (#{experience.toLocaleString()})
-
-                if category === 'currency'
-                    p #{u.score.toLocaleString()} mekos
-
-                if category === 'commands'
-                    p #{u.score.toLocaleString()} commands
-
-                if category === 'reputation'
-                    p #{u.score.toLocaleString()} reputation
+      .column
         if category === 'experience'
-            progress.is-radiusless.progress(max="1" value=`${(u.score - prevOutput) / (output - prevOutput)}`)
+          - var experience = u.score
+          - var level = 0
+          - var output = 0
+          - var prevOutput = 0;
+          while (experience >= output)
+            - prevOutput = output
+            - output = 10 + (output + (level * 20))
+            - level++
+
+          p Level: #{level} (#{experience.toLocaleString()})
+
+        if category === 'currency'
+          p #{u.score.toLocaleString()} mekos
+
+        if category === 'commands'
+          p #{u.score.toLocaleString()} commands
+
+        if category === 'reputation'
+          p #{u.score.toLocaleString()} reputation
+    if category === 'experience'
+      progress.is-radiusless.progress(max="1" value=`${(u.score - prevOutput) / (output - prevOutput)}`)
 
 block page
-    section.section.hero.is-small.miki-bg
-        .container
-            .columns.is-vcentered
-                .column.content
-                    h1.title.has-text-white.is-large Leaderboards
-    include leaderboards/leaderboards-nav
+  section.section.hero.is-small.miki-bg
+    .container
+      .columns.is-vcentered
+        .column.content
+          h1.title.has-text-white.is-large Leaderboards
+  include leaderboards/leaderboards-nav
 
-    if data == undefined
+  if data == undefined
 
-    else
-        .section
-            .container
-                each v in data.items    
-                    +user(v)
-        .section
-            .container
-                .has-text-centered.columns.is-mobile
-                    if (pages.prev_url !== undefined)
-                        .column
-                            a(href=`${pages.prev_url}`) #[i.far.fa-chevron-left] Prev Page
-                    if (pages.next_url !== undefined)
-                        .column
-                            a(href=`${pages.next_url}`) Next Page  #[i.far.fa-chevron-right]
+  else
+    .section
+      .container
+        each v in data.items
+          +user(v)
+    .section
+      .container
+        .has-text-centered.columns.is-mobile
+          if (pages.prev_url !== undefined)
+            .column
+              a(href=`${pages.prev_url}`) #[i.far.fa-chevron-left] Prev Page
+          if (pages.next_url !== undefined)
+            .column
+              a(href=`${pages.next_url}`) Next Page  #[i.far.fa-chevron-right]

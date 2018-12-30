@@ -1,7 +1,8 @@
-const current = window.location.pathname.split('/').pop();
+const current = window.location.pathname.split("/").pop();
 
-const elems = [...document.querySelectorAll('li a')];
+// @ts-ignore
+const elems = [...document.querySelectorAll("li a")];
 
-const elem = elems.find(e => e.innerText.toLowerCase() === current);
+const elem = elems.find((e) => e.innerText.toLowerCase() === current);
 
-elem.classList.add('hovered');
+elem.classList.add("hovered");

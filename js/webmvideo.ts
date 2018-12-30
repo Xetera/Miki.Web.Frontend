@@ -1,1 +1,5 @@
-document.getElementById('landing-video').playbackRate = 1.1;
+const vid = document.getElementById("landing-video");
+
+if (vid instanceof HTMLVideoElement) {
+	vid.playbackRate = 1.1;
+}

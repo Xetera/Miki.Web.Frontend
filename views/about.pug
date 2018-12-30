@@ -1,30 +1,52 @@
 extends templates/base
 
-block page
-	-
-		var devs = [
-		{name: "Veld",      desc: "Lead Developer", uid:"121919449996460033", github:"https://github.com/velddev", twitter: "https://twitter.com/velddev", twitch: "https://www.twitch.tv/velddev"},
-		{name: "Fuzen",     desc: "Code Connoisseur", uid:"134090963395149824", github:"https://github.com/Fuzen-py"},
-		{name: "GrammarJew", desc: "Github Corrector", uid:"141752316188426241", github:"https://github.com/thegrammarjew"},
-		{name: "Xetera", desc: "Conke Addict", uid:"140862798832861184", github:"https://github.com/xetera"}
-		]
-		var mods = [
-		{name: "xRappy",    desc: "Server Admin", uid: "102405515060994048"},
-		{name: "IA",        desc: "Server Admin", uid: "147447799573774336"},
-		{name: "Tal",       desc: "Server Mod",   uid: "166157397738520578"},
-		{name: "Meagan",    desc: "Server Mod",   uid: "189158295704043521"},
-		{name: "Homer12346",desc: "Server Maid",   uid: "136823052368347136"},
-		]
-		var contribs = [
-		"Vallode", "Igarashi",
-		"AlexFlipnote", "Brandon",
-		"Drummss", "Florestina",
-		"Karen", "Luke",
-		"Milk", "n0t",
-		"Nukegirl", "Phanrazak",
-		"Rie", "Rosie"
-		].sort(function (a, b) { return a > b ? 1 : -1 })
+mixin developer(dev)
+	.card.column.seperated
+		if dev.uid
+		.card-content
+			.card-image
+				figure.image
+					img.is-rounded(src=`https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/${dev.uid}.png`)
+		.card-content
+			.media-content.has-text-centered
+				p.is-size-4.has-text-weight-bold= dev.name
+			if dev.desc
+				p.subtitle.has-text-centered= dev.desc
+			else
+				p Developer
+			+about(dev)
 
+mixin moderator(mod)
+	.card.column.seperated
+		if mod.uid
+			.card-content
+				figure.image.rounded
+					img.is-rounded(src=`https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/${mod.uid}.png`)
+		.card-content.has-text-centered
+			h2= mod.name
+			if mod.desc
+				p= mod.desc
+			else
+				p Moderator
+			+about(mod)
+
+mixin about(link)
+	.columns.has-text-centered
+		if link.github
+			.column
+				a(href=link.github target="_blank" rel="noopener")
+					i.fab.fa-github.fa-2x(aria-hidden="true")
+		if link.twitter
+			.column
+				a(href=link.twitter target="_blank" rel="noopener")
+					i.fab.fa-twitter.fa-2x(aria-hidden="true")
+		if link.twitch
+			.column
+				a(href=link.twitch target="_blank" rel="noopener")
+					i.fab.fa-twitch.fa-2x(aria-hidden="true")
+
+
+block page
 	section.section.hero.is-medium.miki-bg
 		.container
 			h1.title.has-text-light So, what's Miki?
@@ -40,60 +62,19 @@ block page
 			h1.nm Development Team
 			.columns
 				each dev in devs
-					.card.column.seperated
-						if dev.uid
-						.card-content
-							.card-image
-								figure.image
-									img.is-rounded(src=`https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/${dev.uid}.png`)
-						.card-content
-							.media-content.has-text-centered
-								p.is-size-4.has-text-weight-bold= dev.name
-							if dev.desc
-								p.subtitle.has-text-centered= dev.desc
-							else
-								p Developer
-							.columns.has-text-centered
-								if dev.github
-									.column
-										a(href=dev.github target="_blank" rel="noopener")
-											i.fab.fa-github.fa-2x(aria-hidden="true")
-								if dev.twitter
-									.column
-										a(href=dev.twitter target="_blank" rel="noopener")
-											i.fab.fa-twitter.fa-2x(aria-hidden="true")
-								if dev.twitch
-									.column
-										a(href=dev.twitch target="_blank" rel="noopener")
-											i.fab.fa-twitch.fa-2x(aria-hidden="true")
+					+developer(dev)
+
 	section.section.content
 		.container
 			h1.nm Server Moderators
 			.columns
 				each mod in mods
+					+moderator(mod)
+
+	section.section.content
+		.container
+			h1.nm Alumni
+			.columns
+				for user in contribs
 					.card.column.seperated
-						if mod.uid
-							.card-content
-								figure.image.rounded
-									img.is-rounded(src=`https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/${mod.uid}.png`)
-						.about-content.has-text-centered
-							h2= mod.name
-							if mod.desc
-								p= mod.desc
-							else
-								p Moderator
-							.about-links
-								if mod.github
-									a(href=mod.github target="_blank" rel="noopener")
-										i.fa.fa-github.fa-2x(aria-hidden="true")
-								if mod.twitter
-									a(href=mod.twitter target="_blank" rel="noopener")
-										i.fa.fa-twitter.fa-2x(aria-hidden="true")
-								if mod.twitch
-									a(href=mod.twitch target="_blank" rel="noopener")
-										i.fa.fa-twitch.fa-2x(aria-hidden="true")
-	section.section
-		.container.content
-			h1.title Alumni
-			for user in contribs
-				p= user
+						p=user

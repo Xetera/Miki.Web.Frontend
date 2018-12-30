@@ -1,0 +1,7 @@
+{
+	"include": ["./js"],
+	"compilerOptions": {
+		"lib": ["dom", "esnext"],
+		"target": "es3"
+	}
+}

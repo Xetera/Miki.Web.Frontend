@@ -1,5 +1,7 @@
 script.
-	const toggle = function() { document.getElementById('user-nav-dropdown').classList.toggle('is-active') };
+	const toggle = function () {
+		document.getElementById('user-nav-dropdown').classList.toggle('is-active')
+	};
 
 .navbar-space
 nav.navbar.is-transparent.is-fixed-top(id = "global-nav-bar")
@@ -7,7 +9,7 @@ nav.navbar.is-transparent.is-fixed-top(id = "global-nav-bar")
 		.navbar-brand
 			a.has-text-weight-bold.navbar-item(href="/") MIKI
 			a.navbar-item(href="/")
-				img(src="https://cdn.discordapp.com/avatars/160105994217586689/28903b7d84fae022d45fd3044796adff.png?size=2048")
+				img(style="border-radius: 9999px" src="https://cdn.discordapp.com/avatars/160105994217586689/28903b7d84fae022d45fd3044796adff.png?size=2048")
 			a.navbar-burger(data-target="global-nav-menu" aria-label="menu" role="button" aria-expanded="false")
 				span(aria-hidden="true")
 				span(aria-hidden="true")
@@ -29,4 +31,4 @@ nav.navbar.is-transparent.is-fixed-top(id = "global-nav-bar")
 				else
 					a.navbar-item(href="/login") Log in
 script
-	include ../../js/navigation.js
+	include ../../js/navigation.ts

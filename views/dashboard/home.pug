@@ -6,4 +6,4 @@ block dashboard
     h2 Select the guild you want to edit
     each g in guildsAvailable
       a.image.is-128x128.seperated.is-pulled-left
-        img.is-rounded(src=`https://cdn.discordapp.com/icons/${g.id}/${g.icon}.png` onerror="this.src='https://cdn.discordapp.com/embed/avatars/1.png'")
+        img.is-rounded.hoverable(src=`https://cdn.discordapp.com/icons/${g.id}/${g.icon}.png` onerror="this.src='https://cdn.discordapp.com/embed/avatars/1.png'")

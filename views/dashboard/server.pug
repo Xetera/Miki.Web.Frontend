@@ -1,7 +1,38 @@
 extends ../templates/dashboard
+
+mixin withlabel(item, current)
+	.column.is-half
+		.card
+			.card-content
+				.level
+					.level-item.level-left
+						label.label #{item}
+					.level-item.level-right
+						span.tag.is-info #[b #{current}]
+				block
+
 block dashboard
+	style
+		include ../../css/dashboard.css
 	.content
-		h1 Server Configuration for #{selectedGuild}
+		h1 Server Configuration for #{selectedGuild || '[Your guild]'}
 		hr
-		.content
-			p Yes
+		.field.is-fluid
+			.columns.is-multiline
+				+withlabel('Prefix', prefix || '>')
+					.control
+						input.input(placeholder="Default (>)")
+				+withlabel('Placeholder', prefix || 'Yeet')
+					.control
+						input.input(placeholder="Default (>)")
+				+withlabel('Language', language || 'English')
+					.dropdown.is-hoverable
+						.dropdown-trigger
+							button.button(aria-haspopup=true, aria-controls="dropdown-menu")
+								span Languages
+								span.icon.is-small
+									i.fas.fa-angle-down(aria-hidden=true)
+						.dropdown-menu#dropdown-menu(role="menu")
+							.dropdown-content
+								a.dropdown-item(href="#") Dutch
+

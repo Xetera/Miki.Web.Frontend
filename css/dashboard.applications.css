@@ -5,3 +5,44 @@
 .card-content {
 	padding: 1rem 1.5rem;
 }
+
+.truncate {
+	white-space: nowrap;
+	overflow: hidden;
+	max-width: 100%;
+	-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+}
+
+.add-app {
+	border: 2px dashed grey;
+	height: 10%;
+}
+
+.hover-pointer:hover {
+	cursor: pointer;
+}
+
+.add-app:hover {
+	background-color: #fafafa;
+}
+
+.plus-icon {
+	font-size: 200%;
+}
+
+.copyable {
+	background-color: #dbdbdb;
+	transition: background-color 0.1s ease-in-out revert;
+}
+
+.unselectable {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.copied {
+	background-color: #79b8e1;
+}

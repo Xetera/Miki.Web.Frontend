@@ -8,7 +8,7 @@ mixin maincontent(title)
 			.columns.is-multiline
 				block
 
-mixin application(name, desc, appid)
+mixin application(name, desc, appid, secret)
 	.card.is-full
 		.card-content
 			.level.is-mobile
@@ -17,7 +17,7 @@ mixin application(name, desc, appid)
 						.level-item(style="margin-right: 1.5rem")
 							label.label.has-text-weight-bold=name
 						.level-item
-							label=desc
+							label.truncate=desc
 				.level-item.level-right
 					.icon.tag.is-medium.is-danger
 						i.fas.fa-trash-alt
@@ -25,18 +25,26 @@ mixin application(name, desc, appid)
 		.card-content
 			.columns.level.is-mobile
 				.column.is-2.level-item
-					label.label(contenteditable=false) Application ID
+					label.label Application ID
 				.column.is-10.level-item
-					input.input
+					.input.hover-pointer.copyable(data-key=appid)=appid
 			.columns.level.is-mobile
 				.column.is-2.level-item
 					label.label(contenteditable=false) Application Secret
 				.column.is-10.level-item
-					input.input
+					.input.hover-pointer.copyable(data-key=secret) Click to copy
+			.columns.level.is-mobile
+
+mixin addapp()
+	.add-app.has-hover.has-text-centered.level.is-mobile.hover-pointer
+		i.fas.fa-plus.level-item.plus-icon
 
 block dashboard
 	style
 		include ../../css/dashboard.applications.css
 	+maincontent("Applications")
 		.column
-			+application("Miki", "Sample application using the miki api")
+			+application("Miki", "Sample application using the miki API", "1234567890", "123-456-678asd")
+	+addapp()
+	script
+		include ../../js/dashboard.applications.js

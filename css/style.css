@@ -128,3 +128,8 @@ a {
 .footer {
 	padding: 3rem 1.5rem 1.5rem;
 }
+
+.hovered {
+	background-color: #f5f5f5;
+	color: #363636;
+}

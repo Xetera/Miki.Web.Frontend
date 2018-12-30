@@ -1,0 +1,42 @@
+extends ../templates/dashboard
+
+mixin maincontent(title)
+	.content
+		h1=title
+		hr
+		.field.is-fluid
+			.columns.is-multiline
+				block
+
+mixin application(name, desc, appid)
+	.card.is-full
+		.card-content
+			.level.is-mobile
+				div
+					.level.is-mobile
+						.level-item(style="margin-right: 1.5rem")
+							label.label.has-text-weight-bold=name
+						.level-item
+							label=desc
+				.level-item.level-right
+					.icon.tag.is-medium.is-danger
+						i.fas.fa-trash-alt
+		hr(style="margin: 0;")
+		.card-content
+			.columns.level.is-mobile
+				.column.is-2.level-item
+					label.label(contenteditable=false) Application ID
+				.column.is-10.level-item
+					input.input
+			.columns.level.is-mobile
+				.column.is-2.level-item
+					label.label(contenteditable=false) Application Secret
+				.column.is-10.level-item
+					input.input
+
+block dashboard
+	style
+		include ../../css/dashboard.applications.css
+	+maincontent("Applications")
+		.column
+			+application("Miki", "Sample application using the miki api")

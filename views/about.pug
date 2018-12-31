@@ -47,6 +47,7 @@ mixin about(link)
 
 
 block page
+	- const data = require("./data/about.json")
 	section.section.hero.is-medium.miki-bg
 		.container
 			h1.title.has-text-light So, what's Miki?
@@ -61,20 +62,20 @@ block page
 		.container
 			h1.nm Development Team
 			.columns
-				each dev in devs
+				each dev in data.devs
 					+developer(dev)
 
 	section.section.content
 		.container
 			h1.nm Server Moderators
 			.columns
-				each mod in mods
+				each mod in data.mods
 					+moderator(mod)
 
 	section.section.content
 		.container
 			h1.nm Alumni
 			.columns
-				for user in contribs
+				for user in data.contribs
 					.card.column.seperated
 						p=user

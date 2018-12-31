@@ -9,42 +9,48 @@ mixin maincontent(title)
 				block
 
 mixin application(name, desc, appid, secret)
-	.card.is-full
-		.card-content
+	.card.is-full.application
+		.card-content.app-header
 			.level.is-mobile
-				div
+				form.form(action="/application/edit" method="POST")
 					.level.is-mobile
-						.level-item(style="margin-right: 1.5rem")
-							label.label.has-text-weight-bold=name
+						.level-item.level-left(style="margin-right: 1.5rem")
+							input.has-text-weight-bold.app-input.app-name(name="name" value=name data-value=name || "Application Name")
 						.level-item
-							label.truncate=desc
-				.level-item.level-right
-					.icon.tag.is-medium.is-danger
-						i.fas.fa-trash-alt
+							input.truncate.app-input.app-desc(name="description" value=desc data-value=desc || "Application Description")
+				.level-item.level-right.icon-container
+					.icon.tag.is-medium.is-info.hover-pointer.edit-btn
+						i.fal.fa-pencil
+					.icon.tag.is-medium.is-danger.hover-pointer.delete-btn(data-name=name)
+						i.fal.fa-trash-alt
 		hr(style="margin: 0;")
 		.card-content
 			.columns.level.is-mobile
 				.column.is-2.level-item
 					label.label Application ID
 				.column.is-10.level-item
-					.input.hover-pointer.copyable(data-key=appid)=appid
+					.input.hover-pointer.button.copyable(data-key=appid data-tooltip="Copied!")=appid
 			.columns.level.is-mobile
 				.column.is-2.level-item
 					label.label(contenteditable=false) Application Secret
 				.column.is-10.level-item
-					.input.hover-pointer.copyable(data-key=secret) Click to copy
+					.input.hover-pointer.copyable.button.tooltip(data-key=secret data-id=appid data-tooltip="Copied!") Click to copy
 			.columns.level.is-mobile
 
 mixin addapp()
-	.add-app.has-hover.has-text-centered.level.is-mobile.hover-pointer
+	.add-app.has-hover.has-text-centered.level.is-mobile.hover-pointer#new-app
 		i.fas.fa-plus.level-item.plus-icon
 
 block dashboard
+	include ../templates/mixins
 	style
 		include ../../css/dashboard.applications.css
+		include ../../css/mixins.css
 	+maincontent("Applications")
 		.column
 			+application("Miki", "Sample application using the miki API", "1234567890", "123-456-678asd")
 	+addapp()
 	script
+		include ../../js/util.js
+		include ../../js/behavior.js
 		include ../../js/dashboard.applications.js

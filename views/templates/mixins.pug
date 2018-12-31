@@ -1,0 +1,11 @@
+script
+	include ../../js/behavior.js
+
+mixin modal(text, id)
+	.modal(id!=id)
+		.modal-background
+		.modal-content
+			#{text}
+		button.modal-close.is-large(onclick='hideElement()')
+
+

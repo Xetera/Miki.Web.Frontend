@@ -1,0 +1,50 @@
+{
+	"name": "Veld",
+	"avatarUrl": "default",
+	"headerUrl": "default",
+	"id": 121919449996460030,
+	"mekos": 1231,
+	"level": {
+		"value": 42,
+		"experience": 10000,
+		"max_experience": 42029,
+		"min_experience": 13191
+	},
+	"marriages": [
+		{
+			"name": "Tia",
+			"avatarUrl": "default",
+			"id": 121919449996460030,
+			"score": 100
+		}
+	],
+	"achievements": [
+		{
+			"name": "novice",
+			"type": "achievement",
+			"metadata": {
+				"artist": "",
+				"artist_link": "",
+				"description": "Level 5"
+			}
+		},
+		{
+			"name": "slimy_ghost",
+			"type": "sticker",
+			"metadata": {
+				"artist": "Tianshi",
+				"artist_link": "https://tengokua.tumblr.com"
+			}
+		}
+	],
+	"commands": [
+		{
+			"name": "ping",
+			"amount": 921
+		},
+		{
+			"name": "profile",
+			"amount": 654
+		}
+	]
+}

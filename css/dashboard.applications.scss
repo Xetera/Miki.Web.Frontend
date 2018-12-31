@@ -1,9 +1,13 @@
-.application-item {
-	margin: 5px;
-}
-
 .card-content {
 	padding: 1rem 1.5rem;
+}
+
+form {
+	margin-bottom: 0;
+}
+
+.card {
+	margin-bottom: 2%;
 }
 
 .truncate {
@@ -15,16 +19,45 @@
 }
 
 .add-app {
-	border: 2px dashed grey;
+	border: 2px dashed #4a4a4a;
 	height: 10%;
+
+	&:hover {
+		background-color: #fafafa;
+	}
+}
+
+.application {
+	.icon-container div {
+		margin-left: 5px;
+	}
+
+	.app-header {
+		padding-bottom: 1%;
+		padding-top: 1%;
+		max-height: 100%;
+		//.input {
+		//	//height: auto;
+		//}
+	}
+
+	:not(.input) {
+		border: hidden;
+	}
+
+	.app-name {
+		max-width: 100px;
+	}
+
+	.app-desc {
+		max-width: 200px;
+		-ms-text-overflow: ellipsis;
+		text-overflow: ellipsis;
+	}
 }
 
 .hover-pointer:hover {
 	cursor: pointer;
-}
-
-.add-app:hover {
-	background-color: #fafafa;
 }
 
 .plus-icon {
@@ -33,7 +66,7 @@
 
 .copyable {
 	background-color: #dbdbdb;
-	transition: background-color 0.1s ease-in-out revert;
+	transition: background-color 500ms ease-out;
 }
 
 .unselectable {
@@ -44,5 +77,10 @@
 }
 
 .copied {
-	background-color: #79b8e1;
+	background-color: #d9ffc4;
+
+	&:after {
+		content: 'Copied!'
+	}
 }
+

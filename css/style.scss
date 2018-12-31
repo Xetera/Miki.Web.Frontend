@@ -1,5 +1,6 @@
 @charset "utf-8";
-@import "../../node_modules/bulma/bulma.sass";
+
+$modal-background-background-color = rgba($white, 0.1)
 
 body {
 	font-family: 'Roboto', sans-serif;
@@ -146,3 +147,5 @@ a {
 .site-content {
 	flex: 1;
 }
+
+@import "~bulma/bulma.sass";

@@ -1,7 +1,7 @@
 extends base
 
-mixin dashmenu()
-	p.menu-label Configuration
+mixin dashmenu(content)
+	p.menu-label=content
 		ul.menu-list
 			li
 				block
@@ -23,12 +23,12 @@ block page
 						.dropdown-menu
 							.dropdown-content
 								a.dropdown-item test
-				+dashmenu()
+				+dashmenu("Configuration")
 					a(href="/dashboard/home") Home
 					a(href="/dashboard/permissions") Permissions
 					a(href="/dashboard/roles") Roles
 					a(href="/dashboard/server") Server
-				+dashmenu()
+				+dashmenu("Developer Portal")
 					a(href="/dashboard/applications") Applications
 			.column.is-9
 				block dashboard

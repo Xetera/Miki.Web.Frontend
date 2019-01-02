@@ -1,36 +1,53 @@
 extends templates/base
 
 block page
-  section.section.hero.is-medium.miki-bg
+  .section.hero.is-medium.miki-bg
     .container.content
       h1.has-text-light Feeling generous?
-      p.has-text-grey-lighter Miki is a bot that is growing very fast, and to maintain a bot this big I have to take a lot of time from my daily life and focus on improving Miki for you all to enjoy. Therefore I've set up a few ways for you, the user to donate and support Miki.
+      p.has-text-light Miki is a bot that is growing very fast, and to maintain a bot this big I have to take a lot of time from my daily life and focus on improving Miki for you all to enjoy. Therefore I've set up a few ways for you, the user to donate and support Miki.
 
-  section.section
-    .container.content
-      .columns
+  .content.is-large.is-vcentered(style="padding: 10px; background-color: rgb(236, 108, 88);")
+    .container
+      h3.has-text-white.is-marginless #[i.fab.fa-patreon.seperated] Patreon
+  .content
+    .container
+      p Miki uses Patreon as her main source of funding to be able to stay up, functional, and to pay artists, freelancers or designers to keep the platform as high quality as it could possibly be. 
+      .section.columns.is-vcentered
         .column
-          h3 #[i.fab.fa-patreon] Patreon
-          p For an easy way to check how much money I am expecting to get for the month I use patreon as a subscription-based donation platform. We offer rewards from extra personalized profiles to new command commissions per month!
-          a(href="https://www.patreon.com/bePatron?u=2542689", data-patreon-widget-type="become-patron-button" target="_blank" rel="noopener")
-            a.button.is-large.is-danger #[i.fab.fa-patreon] &nbsp; become a patron
+          h4 Extra commands
+          p As an active donator you will get access to our more process-expensive commands. These are mostly commands that require on-the-go image manipulation, or multiple requests to external services we can not monitor.
         .column
-          h3 #[i.fas.fa-coffee] Ko-fi
-          p Not a fan of commitment? No worries, we also support one-time donations with Ko-fi! You get instant rewards if you pass your discord user ID at the end of your message!
-          a(href="https://ko-fi.com/velddy" target="_blank" rel="noopener")
-            a.button.is-large.is-dark  #[i.fas.fa-coffee] &nbsp; Buy me a coffee
-      .columns
+          img(src="/img/donate/donate_1.png")
+      .section.columns.is-vcentered
         .column
-          h3 #[i.fab.fa-bitcoin] Bitcoin
-          p Do you not like money? Don't worry, I'm hip and young developer that (not really) believes in the "blockchain" technology. Therefore I made a bitcoin wallet.
-          div.wallets
-            p #[i.fab.fa-btc] BTC: #[code 1FWRxg7r6hKQg4Lf46ot3o8RUSLrBGuddu]
-            p #[i.fab.fa-ethereum] ETH: #[code 0x3388F0b09d36d10FA8276854EA6b950A6183Bac4]
-            p Or DM Veld#0001 for other currencies
+          h4 Doubled daily rewards
+          p While you donate to Miki, your daily rewards (+ streaks) will be doubled! This means that instead of 100 mekos, you gain 200. If your streak then would be 20 days, you would make 1,000 mekos that day instead of 500!
         .column
-          h3 #[i.fas.fa-hand-heart] Alternative
-          p If you don't really have access to money, there is still a few things you could do!
-            ul
-              li Consider participating in our #[a(href="https://trello.com/b/SdjIVMtx/miki") trello] discussion boards to finetune new features, so we can get a better grasp of what you guys would like to see next!
-              li Vote for #[a(href="https://discordbots.org/bot/160105994217586689") Miki on Discordbots.org]
-              li Join our #[a(href="https://discord.gg/veUGD9t") community] and help other users!
+          img(src="/img/donate/donate_2.png")
+      .section.columns.is-vcentered
+        .column
+          h4 A special achievement
+          p Show off your patronage by showing off your cool donator profile badge! Use it to impress your friends!
+        .column
+          img(src="/img/donate/donate_3.png")
+
+      .section.has-text-centered
+        a(href="https://www.patreon.com/bePatron?u=2542689", data-patreon-widget-type="become-patron-button" target="_blank" rel="noopener")
+          .button.is-rounded.is-large(style="color: white; background-color: rgb(236, 108, 88);") #[i.fab.fa-patreon] &nbsp; Become a patron
+
+  .content.is-large.is-vcentered(style="padding: 10px; background-color: rgb(100, 157, 189);")
+    .container
+      h3.has-text-white.is-marginless #[i.fas.fa-coffee.seperated] Ko-fi
+  .content
+    .container
+      p Not a fan of commitment? No worries, we also support one-time donations with Ko-fi! You get instant rewards if you pass your discord user Id at the end of your message! A fair warning though. You'll be missing out on a handful of features by using Kofi.
+      .section.columns
+        .column
+          h4 No donator chat access
+          p As a one-time only donator, you won't get access to the patreon chat.
+        .column
+          h4 No patreon timeline access
+          p I post new polls, interesting bits or posts on Patreon every now and then. And you'll be missing out on these too.
+      .section.has-text-centered
+        a(href="https://ko-fi.com/velddy" target="_blank" rel="noopener")
+          a.is-centered.is-rounded.button.is-large(style="color: white; background-color: rgb(100, 157, 189);")  #[i.fas.fa-coffee] &nbsp; Buy me a coffee

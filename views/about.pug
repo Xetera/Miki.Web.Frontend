@@ -1,81 +1,140 @@
 extends templates/base
-
 mixin developer(dev)
-	.card.column.seperated
-		if dev.uid
-		.card-content
-			.card-image
-				figure.image
-					img.is-rounded(src=`https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/${dev.uid}.png`)
-		.card-content
-			.media-content.has-text-centered
-				p.is-size-4.has-text-weight-bold= dev.name
-			if dev.desc
-				p.subtitle.has-text-centered= dev.desc
-			else
-				p Developer
-			+about(dev)
+  .card.column.seperated
+    if dev.uid
+    .card-content
+      .card-image
+        figure.image
+          img.is-rounded(src=`https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/${dev.uid}.png`)
+    .card-content
+      .media-content.has-text-centered
+        p.is-size-4.has-text-weight-bold= dev.name
+      if dev.desc
+        p.subtitle.has-text-centered= dev.desc
+      else
+        p Developer
+      +about(dev)
 
 mixin moderator(mod)
-	.card.column.seperated
-		if mod.uid
-			.card-content
-				figure.image.rounded
-					img.is-rounded(src=`https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/${mod.uid}.png`)
-		.card-content.has-text-centered
-			h2= mod.name
-			if mod.desc
-				p= mod.desc
-			else
-				p Moderator
-			+about(mod)
+  .card.column.seperated
+    if mod.uid
+      .card-content
+        figure.image.rounded
+          img.is-rounded(src=`https://miki-cdn.nyc3.digitaloceanspaces.com/avatars/${mod.uid}.png`)
+    .card-content.has-text-centered
+      h2= mod.name
+      if mod.desc
+        p= mod.desc
+      else
+        p Moderator
+      +about(mod)
+
+mixin alumni(alum)
+  .card.column.seperated
+    p.has-text-centered=alum
 
 mixin about(link)
-	.columns.has-text-centered
-		if link.github
-			.column
-				a(href=link.github target="_blank" rel="noopener")
-					i.fab.fa-github.fa-2x(aria-hidden="true")
-		if link.twitter
-			.column
-				a(href=link.twitter target="_blank" rel="noopener")
-					i.fab.fa-twitter.fa-2x(aria-hidden="true")
-		if link.twitch
-			.column
-				a(href=link.twitch target="_blank" rel="noopener")
-					i.fab.fa-twitch.fa-2x(aria-hidden="true")
-
+  .columns.has-text-centered
+    if link.github
+      .column
+        a.about-link(href=link.github target="_blank" rel="noopener")
+          i.fab.fa-github.fa-2x(aria-hidden="true")
+    if link.twitter
+      .column
+        a.about-link(href=link.twitter target="_blank" rel="noopener")
+          i.fab.fa-twitter.fa-2x(aria-hidden="true")
+    if link.twitch
+      .column
+        a.about-link(href=link.twitch target="_blank" rel="noopener")
+          i.fab.fa-twitch.fa-2x(aria-hidden="true")
 
 block page
-	- const data = require("./data/about.json")
-	section.section.hero.is-medium.miki-bg
-		.container
-			h1.title.has-text-light So, what's Miki?
-			p.has-text-white Miki is a bot that focuses on community related events.
-				| She can do anything from playing games with you, to showing you progress,
-				| and ofcourse with memes. She has a little bit of everything and all features
-				| are made with hand by yours truly. Her design is based on the Vocaloid
-				| #[a(href="http://vocaloid.wikia.com/wiki/SF-A2_miki") SF-A2 Miki], but we give
-				| her a little bit of our own flair!
+  section.section.hero.is-medium.miki-bg
+    .container
+      h1.title.has-text-light So, what's Miki?
+      p.has-text-white Miki is a bot that focuses on community related events.
+        | She can do anything from playing games with you, to showing you progress,
+        | and ofcourse with memes. She has a little bit of everything and all features
+        | are made with hand by yours truly. Her design is based on the Vocaloid
+        | #[a(href="http://vocaloid.wikia.com/wiki/SF-A2_miki") SF-A2 Miki], but we give
+        | her a little bit of our own flair!
 
-	section.section.content
-		.container
-			h1.nm Development Team
-			.columns
-				each dev in data.devs
-					+developer(dev)
+  section.section.content
+    .container
+      h1.nm Development Team
+      .columns
+        +developer({
+          name: "Veld",
+          desc: "Lead Developer",
+          uid: "121919449996460033",
+          github: "https://github.com/velddev",
+          twitter: "https://twitter.com/velddev",
+          twitch: "https://www.twitch.tv/velddev"
+        })
+        +developer({
+          name: "Fuzen",
+          desc: "Code Connoisseur",
+          uid: "134090963395149824",
+          github: "https://github.com/Fuzen-py"
+        })
+        +developer({
+          name: "GrammarJew",
+          desc: "Github Corrector",
+          uid: "141752316188426241",
+          github: "https://github.com/thegrammarjew"
+        })
+        +developer({
+          name: "Xetera",
+          desc: "Conke Addict",
+          uid: "140862798832861184",
+          github: "https://github.com/xetera"
+        })
 
-	section.section.content
-		.container
-			h1.nm Server Moderators
-			.columns
-				each mod in data.mods
-					+moderator(mod)
+  section.section.content
+    .container
+      h1.nm Server Moderators
+      .columns#mods
+        +moderator({
+          name: "xRappy",
+          desc: "Server Admin",
+          uid: "102405515060994048"
+        })
+        +moderator({
+          name: "IA",
+          desc: "Server Admin",
+          uid: "147447799573774336"
+        })
+        +moderator({
+          name: "Tal",
+          desc: "Server Mod",
+          uid: "166157397738520578"
+        })
+        +moderator({
+          name: "Meagan",
+          desc: "Server Mod",
+          uid: "189158295704043521"
+        })
+        +moderator({
+          name: "Homer12346",
+          desc: "Server Maid",
+          uid: "136823052368347136"
+        })
 
-	section.section.content
-		.container
-			h1.nm Alumni
-			.columns
-				for user in data.contribs
-					.card.column.seperated
-						p=user
+  section.section.content
+    .container
+      h1.nm Alumni
+      .columns#alumni
+        +alumni("Vallode")
+        +alumni("Igarashi")
+        +alumni("AlexFlipnote")
+        +alumni("Brandon")
+        +alumni("Drummss")
+        +alumni("Florestina")
+        +alumni("Karen")
+        +alumni("Luke")
+        +alumni("Milk")
+        +alumni("n0t")
+        +alumni("Nukegirl")
+        +alumni("Phanrazak")
+        +alumni("Rie")
+        +alumni("Rosie")

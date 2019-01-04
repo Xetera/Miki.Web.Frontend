@@ -1,6 +1,6 @@
 extends templates/base
 mixin developer(dev)
-  .card.column.seperated.card-limit
+  .card.column.seperated
     if dev.uid
     .card-content
       .card-image
@@ -16,7 +16,7 @@ mixin developer(dev)
       +about(dev)
 
 mixin moderator(mod)
-  .card.column.seperated.card-limit
+  .card.column.seperated
     if mod.uid
       .card-content.has-text-centered
         figure.image.is-128x128(style="margin: auto;")
@@ -30,7 +30,7 @@ mixin moderator(mod)
       +about(mod)
 
 mixin alumni(alum)
-  .card.column.seperated.card-limit
+  .card.column.seperated
     p.has-text-centered=alum
 
 mixin about(link)
@@ -58,10 +58,11 @@ block page
         | are made with hand by yours truly. Her design is completely original, and
         | a lot of thought went into hers.
         
-  section.section.content
+  .section.content
     .container.has-text-centered
       h1.nm Development Team
-      .columns.is-multiline.is-flex.is-flex-centered 
+      p Working on improving the your Miki experience!
+      .section.columns.is-multiline.is-flex.is-flex-centered 
         +developer({
           name: "Veld",
           desc: "Lead Developer",
@@ -80,7 +81,8 @@ block page
   section.section.content
     .container.has-text-centered
       h1.nm Server Moderators
-      .columns.is-multiline.is-flex.is-flex-centered
+      p Keeping the support server clean!
+      .section.columns.is-multiline.is-flex.is-flex-centered
         +moderator({
           name: "xRappy",
           desc: "Server Admin",
@@ -108,9 +110,10 @@ block page
         })
 
   section.section.content
-    .container
+    .container.has-text-centered
       h1.nm Alumni
-      .columns.is-multiline.is-flex.is-flex-centered
+      p These lovely people helped Miki in the past!
+      .section.columns.is-multiline.is-flex.is-flex-centered
         +alumni("AlexFlipnote")
         +alumni("Brandon")
         +alumni("Drummss")

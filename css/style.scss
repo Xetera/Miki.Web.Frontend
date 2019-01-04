@@ -11,6 +11,14 @@ a.about-link {
 	color: rgb(101, 100, 104);
 }
 
+.is-flex-centered {
+	justify-content: center;
+}
+
+.card-limit {
+	max-width: 15em;
+}
+
 .miki-bg {
 	background-image: url('../img/miki_blur_bg.jpg');
 	background-size: cover;

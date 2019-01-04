@@ -7,7 +7,6 @@ Standard dev mode with built-in parcel webserver
 1. `npm install`
 2. `npm run dev`
 
-
 ## Building with docker + nginx
 Big boy build with nginx, removing `.html` extensions from endpoints
 
@@ -19,4 +18,3 @@ and have them link to `/about` instead
 2. `npm run build`
 3. `docker build -t miki .`
 3. `docker run --name miki --publish 80:80 -d miki`
-

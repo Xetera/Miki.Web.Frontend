@@ -1,0 +1,34 @@
+{
+  "name": "Miki.Web.Frontend",
+  "version": "1.0.0",
+  "description": "The official repository for Miki.ai's frontend code. Collaborate and post issues here related to the current website version.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel views/index.pug",
+    "build": "parcel build views/index.pug views/404.pug views/500.pug --public-url ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mikibot/Miki.Web.Frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mikibot/Miki.Web.Frontend/issues"
+  },
+  "homepage": "https://github.com/Mikibot/Miki.Web.Frontend#readme",
+  "dependencies": {
+    "bulma": "^0.7.2",
+    "node-sass": "^4.11.0",
+    "node-static": "^0.7.11",
+    "parcel-bundler": "^1.11.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "pug": "^2.0.3",
+    "typescript": "^3.2.2"
+  }
+}

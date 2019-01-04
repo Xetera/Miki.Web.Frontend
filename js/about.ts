@@ -1,4 +1,4 @@
-{
+export const data = {
 	"devs": [
 		{
 			"name": "Veld",
@@ -70,4 +70,4 @@
 		"Rie",
 		"Rosie"
 	]
-}
+};

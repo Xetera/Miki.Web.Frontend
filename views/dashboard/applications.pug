@@ -44,13 +44,13 @@ mixin addapp()
 block dashboard
 	include ../templates/mixins
 	style
-		include ../../css/dashboard.applications.css
-		include ../../css/mixins.css
+		include ../../css/dashboard.applications.scss
+		include ../../css/mixins.scss
 	+maincontent("Applications")
 		.column
 			+application("Miki", "Sample application using the miki API", "1234567890", "123-456-678asd")
 	+addapp()
 	script
-		include ../../js/util.js
-		include ../../js/behavior.js
-		include ../../js/dashboard.applications.js
+		include ../../js/util.ts
+		include ../../js/behavior.ts
+		include ../../js/dashboard.applications.ts

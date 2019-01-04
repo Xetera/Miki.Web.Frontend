@@ -1,14 +1,22 @@
 @charset "utf-8";
 
-$modal-background-background-color = rgba($white, 0.1)
+$modal-background-background-color: rgba(#ffffff, 0.1);
 
 body {
 	font-family: 'Roboto', sans-serif;
 }
 
-a {
+a.about-link {
 	font-weight: lighter;
 	color: rgb(101, 100, 104);
+}
+
+.is-flex-centered {
+	justify-content: center;
+}
+
+.card-limit {
+	max-width: 15em;
 }
 
 .miki-bg {

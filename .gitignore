@@ -1,2 +1,5 @@
-js/*.js
-css/*.css
+node_modules/
+.cache/
+.idea/
+dist/
+

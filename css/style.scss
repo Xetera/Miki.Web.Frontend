@@ -15,23 +15,27 @@ a.about-link {
 	justify-content: center;
 }
 
+.is-merged {
+	background-color: transparent !important;
+}
+
+.navbar-large {
+	min-height: 5rem !important;
+}
+
 .card-limit {
 	max-width: 15em;
 }
 
-.miki-bg {
-	background-image: url('../img/miki_blur_bg.jpg');
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
+.is-smooth {
+	transition: 0.1s;
 }
-
-.miki-bg-blur {
-	background-image: url('../img/miki_blur_bg.jpg');
+.is-smoother {
+	transition: 0.5s;
 }
 
 .seperated {
-	margin: 0.5em;
+	margin: 0em 0.5em;
 }
 
 .is-padded {
@@ -69,6 +73,14 @@ a.about-link {
 	z-index: 1;
 	position: absolute;
 	right: 60%;
+}
+
+#landing-img {
+    margin-top: 5%;
+    margin-left: -1.5%;
+    animation: monitorIn .5s ease-in-out .4s forwards; /* assign animation to iota with 'chatblips' as keyframe name */
+    opacity: 0;
+	z-index: 2;
 }
 
 .testimonial blockquote {
@@ -160,4 +172,15 @@ a.about-link {
 	flex: 1;
 }
 
-@import "~bulma/bulma.sass";
+@keyframes monitorIn{
+    from{
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@import "bulma/bulma.sass";

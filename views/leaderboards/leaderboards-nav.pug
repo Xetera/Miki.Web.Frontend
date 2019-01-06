@@ -1,14 +1,14 @@
 nav.navbar.has-background-light
-  .container
-    .navbar-menu
-      .navbar-start
-        if guildId
-          a.navbar-item(href="/leaderboards/#{guildId}/experience") Experience
-          a.navbar-item(href="/leaderboards/#{guildId}/reputation") Reputation
-          a.navbar-item(href="/leaderboards/#{guildId}/commands") Commands
-          a.navbar-item(href="/leaderboards/#{guildId}/currency") Mekos
-        else
-          a.navbar-item(href="/leaderboards/experience") Experience
-          a.navbar-item(href="/leaderboards/reputation") Reputation
-          a.navbar-item(href="/leaderboards/commands") Commands
-          a.navbar-item(href="/leaderboards/currency") Mekos
+	.container
+		.navbar-menu
+			.navbar-start
+				if guildId
+					a.navbar-item(href="/leaderboards/#{guildId}/experience") Experience
+					a.navbar-item(href="/leaderboards/#{guildId}/reputation") Reputation
+					a.navbar-item(href="/leaderboards/#{guildId}/commands") Commands
+					a.navbar-item(href="/leaderboards/#{guildId}/currency") Mekos
+				else
+					a.navbar-item(href="/leaderboards/experience") Experience
+					a.navbar-item(href="/leaderboards/reputation") Reputation
+					a.navbar-item(href="/leaderboards/commands") Commands
+					a.navbar-item(href="/leaderboards/currency") Mekos

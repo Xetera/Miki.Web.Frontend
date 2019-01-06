@@ -2,32 +2,61 @@ extends templates/base
 block page
   - var page_title = 'commands'
   -
+    var modules = [
+      "general"
+    ]
     var commands = [
-      {name: 'help', description: 'Help command gives you list of modules along with its respective commands.', usage: '>help', aliases: 'None'},
-      {name: 'help', description: 'Get help', usage: '>help', aliases: 'None'},
-      {name: 'help', description: 'Get help', usage: '>help', aliases: 'None'},
-      {name: 'help', description: 'Get help', usage: '>help', aliases: 'None'},
-      {name: 'help', description: 'Get help', usage: '>help', aliases: 'None'},
+      {
+        module: "general",
+        name: 'help', 
+        description: 'Shows general help with commands in the bot!', 
+        usages: [
+        {
+          usage: ">help",
+          description: "DMs you a list"
+        },
+        {
+          usage: ">help <command name>",
+          description: "Shows more information based on parameter 'command name'",
+          parameters: [
+            {
+              name: "command name",
+              description: "any command name available for Miki",
+              required: true
+            }
+          ]
+        }
+      ], aliases: 'None'},
     ]
 
-  h1.first commands
-  div.content.commands
-    h2.fm >miki
-    p.
-      Miki has a huge range of commands for you to chose from.
-      <br>
-      We want you to have the power to use Miki to it's full potential so we list every command available here!
-
-    div.tabs
-      table
-        thead
-          tr
-            th Command
-            th Description
-            th Example
-        tbody
-        each command in commands
-          tr
-            td= command.name
-            td= command.description
-            td= command.usage
+  .section.hero.is-textured
+      .container
+        h1.title.has-text-light Commands for Miki
+  .section.container.content
+    .columns
+      .column.is-2
+        h3 Modules
+        ul
+        each m in modules
+          li=m
+      .column
+        each c in commands
+          .box(id=c.module)
+            .level
+              .is-grouped
+                h3=c.name 
+                p=c.description
+              a.button
+                p open
+            .section#openable
+              h4 Usage
+              ul
+              each u in c.usages
+                hr
+                pre #{u.usage}
+                p #{u.description}
+                if u.parameters
+                  h5 Parameters
+                  each p in u.parameters
+                    if p.required
+                      p #[a.is-warning.is-outlined required] #[b=p.name] - #{p.description}

@@ -1,11 +1,11 @@
 {
-  "name": "Miki.Web.Frontend",
+  "name": "miki.web.frontend",
   "version": "1.0.0",
   "description": "The official repository for Miki.ai's frontend code. Collaborate and post issues here related to the current website version.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel views/index.pug views/legal.pug",
+    "dev": "parcel views/index.pug",
     "build": "parcel build views/legal.pug views/index.pug views/404.pug views/500.pug --public-url ./"
   },
   "repository": {

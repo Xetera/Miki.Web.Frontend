@@ -13,10 +13,19 @@ a.about-link {
 
 .is-flex-centered {
 	justify-content: center;
+	vertical-align: middle;
+}
+
+.is-textured {
+	background-image: url('../img/waves1.png');
 }
 
 .is-merged {
 	background-color: transparent !important;
+	font-size: 1.2rem;
+}
+.is-merged a:hover {
+	background-color: rgba(#ffffff, 0.2) !important;
 }
 
 .navbar-large {
@@ -30,12 +39,9 @@ a.about-link {
 .is-smooth {
 	transition: 0.1s;
 }
+
 .is-smoother {
 	transition: 0.5s;
-}
-
-.seperated {
-	margin: 0em 0.5em;
 }
 
 .is-padded {

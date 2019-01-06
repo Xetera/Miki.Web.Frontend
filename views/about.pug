@@ -1,4 +1,5 @@
 extends templates/base
+
 mixin developer(dev)
   .card.column.seperated
     if dev.uid
@@ -49,7 +50,7 @@ mixin about(link)
           i.fab.fa-twitch.fa-2x(aria-hidden="true")
 
 block page
-  section.section.hero.is-medium.miki-bg
+  section.section.hero.is-textured
     .container
       h1.title.has-text-light So, what's Miki?
       p.has-text-white Miki is a bot that focuses on community related events.

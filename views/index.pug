@@ -15,18 +15,20 @@ mixin testimonial(q)
 				span.has-text-dark=q.desc
 
 block page
-	.section.hero.is-small(style="padding-top: 3.25rem; background-image: url('../img/waves1.png')")
+	.section.hero.is-middle.is-textured.first
 		.hero-body
 			.container
 				.columns.is-vcentered
 					.column.is-5.content
 						h1.title.has-text-white.is-spaced MIKI for Discord
 						p.subtitle.has-text-white Your solution to a great Discord Community!
-						div
-							a.button.is-large(href="/invite?mikiai").is-info
-								p #[i.fab.fa-discord] Invite
-							a.button.is-large(href="https://discord.gg/39Xpj7K").seperated
-								p Support server
+						.field.is-grouped
+							.control
+								a.button.is-large(href="/invite?mikiai").is-info
+									p #[i.fab.fa-discord] Invite
+							.control
+								a.button.is-large(href="https://discord.gg/39Xpj7K")
+									p Support server
 					.column.is-offset-2.is-10.is-hidden-touch.is-hidden-desktop-only.image
 						img.has-shadow.is-smooth(src="../img/landing-image.png" style="border-radius: 15px")#landing-img
 	.section.has-background-lighter
@@ -101,7 +103,7 @@ block page
 							desc: "ESO SQUAD"
 						})
 	
-	.section.hero.is-small.has-text-centered.has-background-primary(style="background-image: url('../img/waves1.png')")
+	.section.hero.is-small.has-text-centered.has-background-primary.is-textured
 		.hero-body
 			h2.has-text-white.title Get started with Miki
 			div

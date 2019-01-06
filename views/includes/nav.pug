@@ -1,9 +1,10 @@
 script.
-	const toggle = function () {
-		document.getElementById('user-nav-dropdown').classList.toggle('is-active')
-	};
+    const toggle = function () {
+        document.getElementById('user-nav-dropdown').classList.toggle('is-active')
+    };
 
 nav.navbar#global-nav-bar
+
 	.container
 		.navbar-brand
 			a.navbar-item(href="/")
@@ -18,15 +19,9 @@ nav.navbar#global-nav-bar
 					p Commands
 				a.navbar-item(href="/about.pug")
 					p About
-				a.navbar-item(href="/donate.pug") Donate
-				a.navbar-item(href="https://blog.miki.ai/") Blog
-				//if loggedInUser != null
-				//	.navbar-item.has-dropdown#user-nav-dropdown
-				//		a.navbar-link(onclick="toggle()") #{loggedInUser.username}
-				//		.navbar-dropdown
-				//			a.navbar-item(href=`/profile/${loggedInUser.id}`) Profile
-				//			a.navbar-item(href="/dashboard/home") Dashboard
-				//else
-				//	a.navbar-item(href="/login") Log in
+                a.navbar-item(href="/donate.pug")
+                    p Donate
+                a.navbar-item(href="https://blog.miki.ai/")
+                    p Blog
 script
-	include ../../js/navigation.ts
+    include ../../js/navigation.ts

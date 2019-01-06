@@ -24,16 +24,25 @@ a.about-link {
 	background-image: url('../img/waves1.png');
 }
 
-.is-merged {
-	background-color: transparent !important;
-	font-size: 1.2rem;
-}
-.is-merged a:hover {
-	background-color: rgba(#ffffff, 0.2) !important;
+#global-nav-bar.navbar-large {
+    background-color: transparent;
+	min-height: 9em;
+
+	.navbar-brand {
+		font-size: 3em;
+	}
+
+	.navbar-end .navbar-item {
+		font-size: 1.2em;
+	}
+
+	a:hover {
+		background-color: rgba(#ffffff, 0.2);
+	}
 }
 
-.navbar-large {
-	min-height: 5rem !important;
+#global-nav-bar .navbar-item {
+	transition: font-size 0.5s ease;
 }
 
 .card-limit {
@@ -45,7 +54,7 @@ a.about-link {
 }
 
 .is-smoother {
-	transition: 0.5s;
+	transition: all 0.5s ease;
 }
 
 .is-padded {

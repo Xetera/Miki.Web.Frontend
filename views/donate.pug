@@ -1,7 +1,7 @@
 extends templates/base
 
 block page
-  .section.hero.is-textured
+  .section.hero.is-medium.is-textured
     .container.content
       h1.has-text-light Feeling generous?
       p.has-text-light Miki is a bot that is growing very fast, and to maintain a bot this big I have to take a lot of time from my daily life and focus on improving Miki for you all to enjoy. Therefore I've set up a few ways for you, the user to donate and support Miki.
@@ -16,21 +16,21 @@ block page
         .column
           h4 Extra commands
           p As an active donator you will get access to our more process-expensive commands. These are mostly commands that require on-the-go image manipulation, or multiple requests to external services we can not monitor.
-        .column
+        .column.has-text-right
           img(src="../img/donate/donate_1.png")
       .section.columns.is-vcentered
         .column
           h4 Doubled daily rewards
           p While you donate to Miki, your daily rewards (+ streaks) will be doubled! This means that instead of 100 mekos, you gain 200. If your streak then would be 20 days, you would make 1,000 mekos that day instead of 500!
-        .column
+        .column.has-text-right
           img(src="../img/donate/donate_2.png")
       .section.columns.is-vcentered
         .column
           h4 A special achievement
           p Show off your patronage by showing off your cool donator profile badge! Use it to impress your friends!
-        .column
+        .column.has-text-right
           img(src="../img/donate/donate_3.png")
-
+          
       .section.has-text-centered
         a(href="https://www.patreon.com/bePatron?u=2542689", data-patreon-widget-type="become-patron-button" target="_blank" rel="noopener")
           .button.is-rounded.is-large(style="color: white; background-color: rgb(236, 108, 88);") #[i.fab.fa-patreon] &nbsp; Become a patron

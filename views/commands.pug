@@ -31,32 +31,31 @@ block page
 
 	.section.hero.is-textured
 		.container
-		h1.title.has-text-light Commands for Miki
-		.section.container.content
-			.columns
-				.column.is-2
-					h3 Modules
-					ul
-					each m in modules
+			h1.title.has-text-light Commands for Miki
+	.section.container.content
+		.columns
+			.column.is-2
+				h3 Modules
+				ul
+				each m in modules
 					li=m
-				.column
-					each c in commands
+			.column
+				each c in commands
 					.box(id=c.module)
-					.level
-					.is-grouped
-					h3=c.name 
-					p=c.description
-					a.button
-					p open
+						.level
+							.is-grouped
+								h3=c.name 
+								p=c.description
+							a.button
+								p open
 					.section#openable
-					h4 Usage
-					ul
-					each u in c.usages
-					hr
-					pre #{u.usage}
-					p #{u.description}
-					if u.parameters
-					h5 Parameters
-					each p in u.parameters
-					if p.required
-					p #[a.is-warning.is-outlined required] #[b=p.name] - #{p.description}
+						h4 Usage
+						each u in c.usages
+							hr
+							pre #{u.usage}
+							p #{u.description}
+							if u.parameters
+								h5 Parameters
+								each p in u.parameters
+									if p.required
+									p #[a.is-warning.is-outlined required] #[b=p.name] - #{p.description}

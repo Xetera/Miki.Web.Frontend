@@ -27,8 +27,8 @@ block page
 								a.button.is-large(href="/invite?mikiai").is-info
 									p #[i.fab.fa-discord] Invite
 							.control
-								a.button.is-large(href="https://discord.gg/39Xpj7K")
-									p Support server
+								a.button.is-large.is-white.is-outlined(href="https://discord.gg/39Xpj7K")
+									p Support
 					.column.is-offset-2.is-10.is-hidden-touch.is-hidden-desktop-only.image
 						img.has-shadow.is-smooth(src="../img/landing-image.png" style="border-radius: 15px")#landing-img
 	.section.has-background-lighter
@@ -85,10 +85,10 @@ block page
 				.content-wrapper
 					.columns.is-vcentered
 						+testimonial({
-							quote: "When we were looking for a bot, there was nothing really that satisfied our needs. Until we found Miki, she has been keeping our family closer than ever!",
-							image: "https://cdn.discordapp.com/avatars/160105994217586689/93a84d32028381533f6cda4157d7c806.png?size=256",
-							name: "Your Server",
-							desc: "Accounting"
+							quote: "Our server was losing its foundation until Miki came aboard, the community was united with all of its unique features and brought new friendships all-around!",
+							image: "https://cdn.miki.ai/web/landing/guilds/guild-kibii.png",
+							name: "bin",
+							desc: "Kibii TV"
 						})
 						+testimonial({
 							quote: "Miki helps keep the flow of conversations going with her wide variety of fun commands in our server. She's great for small and large servers alike, providing both entertainment and utility!",
@@ -105,11 +105,8 @@ block page
 	
 	.section.hero.is-small.has-text-centered.has-background-primary.is-textured
 		.hero-body
-			h2.has-text-white.title Get started with Miki
-			div
-				a.has-shadow.button.is-large(href="https://discordapp.com/oauth2/authorize?&client_id=160185389313818624&scope=bot").seperated.is-info.is-smooth
-					p #[i.fab.fa-discord.fa-lg] Invite Miki!
-				a.has-shadow.button.is-large(href="https://discord.gg/39Xpj7K").seperated.is-outlined.is-white.is-smooth
-					p Get help
+			h2.has-text-white.title Get started with Miki!
+			a.has-shadow.button.is-large(href="https://discordapp.com/oauth2/authorize?&client_id=160185389313818624&scope=bot").seperated.is-info.is-smooth
+				p #[i.fab.fa-discord] Invite Miki!
 	script
 		include ../js/home.ts

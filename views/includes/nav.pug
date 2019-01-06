@@ -1,32 +1,34 @@
 script.
-	const toggle = function () {
-		document.getElementById('user-nav-dropdown').classList.toggle('is-active')
-	};
+    const toggle = function () {
+        document.getElementById('user-nav-dropdown').classList.toggle('is-active')
+    };
 
 nav.navbar#global-nav-bar
-	.container
-		.navbar-brand
-			a.navbar-item(href="/")
-				b MIKI
-			a.navbar-burger.has-text-centered(data-target="global-nav-menu" aria-label="menu" role="button" aria-expanded="false")
-				span
-				span
-				span
-		.navbar-menu#global-nav-menu
-			.navbar-end
-				a.navbar-item(href="https://github.com/mikibot/miki.bot/wiki")
-					p Commands
-				a.navbar-item(href="/about.pug")
-					p About
-				a.navbar-item(href="/donate.pug") Donate
-				a.navbar-item(href="https://blog.miki.ai/") Blog
-				//if loggedInUser != null
-				//	.navbar-item.has-dropdown#user-nav-dropdown
-				//		a.navbar-link(onclick="toggle()") #{loggedInUser.username}
-				//		.navbar-dropdown
-				//			a.navbar-item(href=`/profile/${loggedInUser.id}`) Profile
-				//			a.navbar-item(href="/dashboard/home") Dashboard
-				//else
-				//	a.navbar-item(href="/login") Log in
+    .container
+        .navbar-brand
+            a.navbar-item(href="/")
+                b MIKI
+            a.navbar-burger.has-text-centered(data-target="global-nav-menu" aria-label="menu" role="button" aria-expanded="false")
+                span
+                span
+                span
+        .navbar-menu#global-nav-menu
+            .navbar-end
+                a.navbar-item(href="https://github.com/mikibot/miki.bot/wiki")
+                    p Commands
+                a.navbar-item(href="/about.pug")
+                    p About
+                a.navbar-item(href="/donate.pug")
+                    p Donate
+                a.navbar-item(href="https://blog.miki.ai/")
+                    p Blog
+                //if loggedInUser != null
+                //	.navbar-item.has-dropdown#user-nav-dropdown
+                //		a.navbar-link(onclick="toggle()") #{loggedInUser.username}
+                //		.navbar-dropdown
+                //			a.navbar-item(href=`/profile/${loggedInUser.id}`) Profile
+                //			a.navbar-item(href="/dashboard/home") Dashboard
+                //else
+                //	a.navbar-item(href="/login") Log in
 script
-	include ../../js/navigation.ts
+    include ../../js/navigation.ts

@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel views/index.pug",
-    "build": "parcel build views/index.pug views/404.pug views/500.pug --public-url ./"
+    "dev": "parcel views/index.pug views/legal.pug",
+    "build": "parcel build views/legal.pug views/index.pug views/404.pug views/500.pug --public-url ./"
   },
   "repository": {
     "type": "git",

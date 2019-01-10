@@ -1,0 +1,41 @@
+-
+    var modules = [
+        {
+            name: "general",
+            commands: [
+                {
+                    name: "help",
+                    description: "Shows general help with commands in the bot!",
+                    usages: [
+                        {
+                            usage: ">help",
+                            description: "DMs you a list"
+                        },
+                        {
+                            usage: ">help <command name>",
+                            description: "Shows more information based on parameter 'command name'",
+                            parameters: [
+                                {
+                                name: "command name",
+                                description: "any command name available for Miki",
+                                required: true
+                                }
+                            ]
+                        }
+                    ], 
+                    aliases: [ "command", "command2" ]
+                },
+                {
+                    name: "poke",
+                    description: "Poke somebody",
+                    usages: [
+                        {
+                            usage: ">poke",
+                            description: "XD"
+                        }
+                    ],
+                    aliases: [ "pok" ]
+                }
+            ]
+        }
+    ]

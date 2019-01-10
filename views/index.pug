@@ -35,7 +35,7 @@ block page
 		.container
 			.has-text-centered
 				h2.title.is-spaced  Why pick Miki?
-				p Miki has already won the hearts of millions of people, and continues to do so with her rich set of functions.
+				p Miki has already won the hearts of millions of people and continues to do so with her rich set of functions.
 
 			.columns.section
 				+content()
@@ -69,7 +69,7 @@ block page
 							i.fal.fa-check.fa-3x.has-text-primary
 						.column
 							h2.title Always improving!
-							p Our community is helping us translate Miki into many languages! With such a diverse community, this will be possible. On top of that, with rapid development, #[b new features are being released weekly]! Online features, such as #[b dashboards, profiles and configuration], are in the works as we speak.We are consistently probing the community for more #[b ideas and suggestions] as we speak. Got a suggestion? #[a(href="https://suggestion.miki.ai") Share] yours today! 
+							p Our diverse community is helping us translate Miki into many languages. On top of that, with rapid development, #[b new features are being released weekly]! Online features, such as #[b dashboards, profiles and configuration], are in the works as we speak.We are consistently probing the community for more #[b ideas and suggestions] as we speak. Got a suggestion? #[a(href="https://suggestion.miki.ai") Share] yours today! 
 	.section
 		.container
 			.title-wrapper.has-text-centered
@@ -96,6 +96,10 @@ block page
 							desc: "ESO SQUAD"
 						})
 	
+	.section
+		.level#updates
+		
+
 	.section.hero.is-small.has-text-centered.has-background-primary.is-textured
 		.hero-body
 			h2.has-text-white.title Get started with Miki!
@@ -103,5 +107,8 @@ block page
 				p #[i.fab.fa-discord] Invite Miki!
 			a.has-shadow.button.is-large(href="https://github.com/velddev/Miki/wiki").seperated.is-white.is-outlined.is-smooth
 				p Learn more
+	
+	script(type="text/javascript" src="https://blog.miki.ai/public/ghost-sdk.min.js")
+	
 	script
 		include ../js/home.ts

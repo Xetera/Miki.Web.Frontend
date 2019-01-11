@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         var o = JSON.parse(this.responseText);
 
-        for(var post in o)
+        for(var post in o.posts)
         {
             document.getElementById("updates").append(
                 `<div>

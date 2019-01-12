@@ -29,8 +29,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         for(var post of o.posts)
         {
-            console.log(post);
-
             let div = document.createElement("div");
 
             let link = document.createElement("a");

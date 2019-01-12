@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (this.readyState == 4 && this.status == 200) {     
         var o = JSON.parse(this.responseText);
 
-        for(var post in o.posts)
+        for(var post of o.posts)
         {
             console.log(post);
 

@@ -31,14 +31,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
         for(var post in o.posts)
         {
-            let div = new Element();
-            div.id = "div";
+            let div = document.createElement("div");
 
-            let link = new Element();
-            link.id = "a";
+            let link = document.createElement("a");
 
-            let image = new Element();
-            image.id = "img";
+            let image = document.createElement("img");
             image.classList.add("image");
             image.setAttribute("src", ghost.url + post.feature_image);
             

@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             let image = document.createElement("img");
             image.classList.add("image");
-            image.setAttribute("src", ghost.url + post.feature_image);
+            image.setAttribute("src", post.feature_image);
             
             div.appendChild(link);
             div.appendChild(image);
@@ -48,6 +48,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       }
     };
-    xhttp.open("GET", ghost.url.api('posts', {limit: 3}), true);
+    xhttp.open("GET", ghost.url.api('posts', {absolute_urls: true, limit: 3}), true);
     xhttp.send();
 });

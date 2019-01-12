@@ -34,10 +34,11 @@ document.addEventListener("DOMContentLoaded", function() {
             let div = document.createElement("div");
 
             let link = document.createElement("a");
+            link.setAttribute("href", "https://blog.miki.ai" + post.url);
 
             let image = document.createElement("img");
             image.classList.add("image");
-            image.setAttribute("src", post.feature_image);
+            image.setAttribute("src", "https://blog.miki.ai" + post.feature_image);
             
             div.appendChild(link);
             div.appendChild(image);

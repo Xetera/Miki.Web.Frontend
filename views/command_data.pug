@@ -1,8 +1,498 @@
 -
     var modules = [
         {
+            name: "fun",
+            commands: [
+                {
+                    name: "8ball",
+                    description: "Let Miki tell your future with simple yes/no questions!",
+                    usages: [
+                        {
+                            usage: ">avatar [question]",
+                            parameters: [
+                                {
+                                    name: "question",
+                                    description: "The question you want Miki to answer",
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "bird",
+                    description: "Post bird pictures in your server",
+                    usages: [
+                        {
+                            usage: ">bird",
+                        }
+                    ]
+                },
+                {
+                    name: "cat",
+                    description: "Post cat pictures in your server",
+                    usages: [
+                        {
+                            usage: ">cat",
+                        }
+                    ]
+                },
+                {
+                    name: "compliment",
+                    description: "Wholesome Miki will give you compliments",
+                    usages: [
+                        {
+                            usage: ">compliment",
+                        }
+                    ]
+                },
+                {
+                    name: "cage",
+                    description: "Get a image of nicholas cage!",
+                    usages: [
+                        {
+                            usage: ">cage",
+                        }
+                    ]
+                },
+                {
+                    name: "dog",
+                    description: "Post dog pictures in your server",
+                    usages: [
+                        {
+                            usage: ">dog",
+                        }
+                    ]
+                },
+                {
+                    name: "gif",
+                    description: "Post gifs from imgur in your server",
+                    usages: [
+                        {
+                            usage: ">gif [search terms]",
+                            parameters: [
+                                {
+                                    name: "search terms",
+                                    description: "anything related to the gif you'd like to see."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "img",
+                    description: "Post images from imgur in your server",
+                    usages: [
+                        {
+                            usage: ">img [search terms]",
+                            parameters: [
+                                {
+                                    name: "search terms",
+                                    description: "anything related to the image you'd like to see."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "pick",
+                    description: "Let miki pick your life choices by giving her a list of things to pick from.",
+                    usages: [
+                        {
+                            usage: ">pick <choice>...",
+                            parameters: [
+                                {
+                                    name: "choice",
+                                    description: "One of the choices you want miki to make! Use a comma to seperate the choices.",
+                                    required: true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "pun",
+                    description: "Gives you a random pun.",
+                    usages: [
+                        {
+                            usage: ">pun"
+                        }
+                    ]
+                },
+                {
+                    name: "roll",
+                    description: "Miki rolls a dice for you!",
+                    usages: [
+                        {
+                            usage: ">roll [number]",
+                            parameters: [
+                                {
+                                    name: "number",
+                                    description: "The max Miki can roll; Default=100"
+                                }
+                            ]
+                        },
+                        {
+                            usage: ">roll <expression>",
+                            parameters: [
+                                {
+                                    name: "expression",
+                                    description: "More advanced rolls; use maths in your rolls. (e.x. '>roll 2d4 + 2' rolls two dices with four sides and adds two to the final roll)"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "reminder",
+                    description: "Let Miki have remind you of things.",
+                    usages: [
+                        {
+                            usage: ">reminder -list",
+                            description: "shows all your open reminders."
+                        },
+                        {
+                            usage: ">reminder -clear <id>",
+                            description: "Removes an active ",
+                            parameters: [
+                                {
+                                    name: "expression",
+                                    description: "More advanced rolls; use maths in your rolls. (e.x. '>roll 2d4 + 2' rolls two dices with four sides and adds two to the final roll)"
+                                }
+                            ]
+                        },
+                        {
+                            usage: ">reminder <reminder> in <time>",
+                            description: "Removes an active reminder",
+                            parameters: [
+                                {
+                                    name: "expression",
+                                    description: "More advanced rolls; use maths in your rolls. (e.x. '>roll 2d4 + 2' rolls two dices with four sides and adds two to the final roll)"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "safe",
+                    description: "Get safe images from image boards.",
+                    usages: [
+                        {
+                            usage: ">safe [tags]",
+                            description: "Find a random picture that follows the tags.",
+                            parameters: [
+                                {
+                                    name: "tags",
+                                    description: "a tag from safebooru; use a - infront of it to exclude the tag. (e.g. -glasses). Seperate tags with a space."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "ship",
+                    description: "Check your compatibility with someone else.",
+                    usages: [
+                        {
+                            usage: ">ship <@user>",
+                            parameters: [
+                                {
+                                    name: "@user",
+                                    description: "The user you'd like to ship with."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "greentext",
+                    description: "Get a random greentext",
+                    usages: [
+                        {
+                            usage: ">greentext"
+                        }
+                    ]
+                },
+            ]
+        },
+        {
+            name: "gambling",
+            commands: [
+                {
+                    name: "blackjack",
+                    description: "Play a game of blackjack against Miki",
+                    usages: [
+                        {
+                            usage: ">blackjack new <bet> [ok]",
+                            description: "Start a new game with Miki",
+                            parameters: [
+                                {
+                                    name: "bet",
+                                    description: "the amount of mekos you want to bet.",
+                                    required: true
+                                },
+                                {
+                                    name: "ok",
+                                    description: "You need to add 'ok' if you're planning on betting over 10,000 mekos"
+                                }
+                            ]
+                        },
+                        {
+                            usage: ">blackjack hit",
+                            description: "Draw a card",
+                        },
+                        {
+                            usage: ">blackjack stay",
+                            description: "Stand your current score and let miki draw.",
+                        }
+                    ],
+                    aliases: ["bj"]
+                },
+                {
+                    name: "flip",
+                    description: "Flip a coin to win mekos!",
+                    usages: [
+                        {
+                            usage: ">flip <side> <bet> [ok]",
+                            description: "Start a new game with Miki",
+                            parameters: [
+                                {
+                                    name: "side",
+                                    description: "Which side of the coin do you bet on? can only be heads or tails.",
+                                    required: true
+                                },
+                                {
+                                    name: "bet",
+                                    description: "the amount of mekos you want to bet.",
+                                    required: true
+                                },
+                                {
+                                    name: "ok",
+                                    description: "You need to add 'ok' if you're planning on betting over 10,000 mekos"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "slots",
+                    description: "Play the slotmachine with Miki!",
+                    usages: [
+                        {
+                            usage: ">slots <bet> [ok]",
+                            description: "Start a new game with Miki",
+                            parameters: [
+                                {
+                                    name: "bet",
+                                    description: "the amount of mekos you want to bet.",
+                                    required: true
+                                },
+                                {
+                                    name: "ok",
+                                    description: "You need to add 'ok' if you're planning on betting over 10,000 mekos"
+                                }
+                            ]
+                        }
+                    ],
+                },
+                  {
+                    name: "rps",
+                    description: "Play rock papers scissors against Miki!",
+                    usages: [
+                        {
+                            usage: ">flip <side> <bet> [ok]",
+                            description: "Start a new game with Miki",
+                            parameters: [
+                                {
+                                    name: "side",
+                                    description: "Which side of the coin do you bet on? can only be rock, paper, or scissors.",
+                                    required: true
+                                },
+                                {
+                                    name: "bet",
+                                    description: "the amount of mekos you want to bet.",
+                                    required: true
+                                },
+                                {
+                                    name: "ok",
+                                    description: "You need to add 'ok' if you're planning on betting over 10,000 mekos"
+                                }
+                            ]
+                        }
+                    ]
+                },
+            ]
+        },
+        {
+            name: "gaming",
+            commands: [
+                {
+                    name: "ctb",
+                    description: "Shows your catch the beat statistics!",
+                    usages: [
+                        {
+                            usage: ">ctb <username>",
+                            description: "Get the catch the beat statistics of 'username'!",
+                            parameters: [
+                                {
+                                    name: "username",
+                                    description: "the osu! username you'd like to see stats from",
+                                    required: true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "osu",
+                    description: "Shows your osu! statistics!",
+                    usages: [
+                        {
+                            usage: ">osu <username>",
+                            description: "Get the osu statistics of 'username'!",
+                            parameters: [
+                                {
+                                    name: "username",
+                                    description: "the osu! username you'd like to see stats from",
+                                    required: true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "mania",
+                    description: "Shows your mania statistics!",
+                    usages: [
+                        {
+                            usage: ">mania <username>",
+                            description: "Get the mania statistics of 'username'!",
+                            parameters: [
+                                {
+                                    name: "username",
+                                    description: "the osu! username you'd like to see stats from",
+                                    required: true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "taiko",
+                    description: "Shows your taiko statistics!",
+                    usages: [
+                        {
+                            usage: ">taiko <username>",
+                            description: "Get the taiko statistics of 'username'!",
+                            parameters: [
+                                {
+                                    name: "username",
+                                    description: "the osu! username you'd like to see stats from",
+                                    required: true
+                                }
+                            ]
+                        }
+                    ]
+                },
+            ]
+        },
+        {
             name: "general",
             commands: [
+                {
+                    name: "avatar",
+                    description: "Don't want to lose your current avatar while you swap to a new one? Save this one!",
+                    usages: [
+                        {
+                            usage: ">avatar",
+                            description: "Get your own avatar!"
+                        },
+                        {
+                            usage: ">avatar <@user>",
+                            description: "Get someone else's avatar!",
+                            parameters: [
+                                {
+                                    name: "@user",
+                                    description: "A mention any user on your discord",
+                                    required: true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "calc",
+                    description: "Calculate maths with Miki's technical calculator",
+                    usages: [
+                        {
+                            usage: ">calc <expression>",
+                            description: "Calculate an mathematical expression",
+                            parameters: [
+                                {
+                                    name: "expression",
+                                    description: "an example of an expression would be '1+1'",
+                                    required: true
+                                }
+                            ]
+                        }
+                    ],
+                    aliases: [ "calculate" ]
+                },
+                {
+                    name: "donate",
+                    description: "Shows all info needed to donate to Miki's development",
+                    usages: [
+                        {
+                            usage: ">donate",
+                            description: "Lets miki send the info"
+                        }
+                    ],
+                },
+                {
+                    name: "changelog",
+                    description: "Gives you a link to Miki's blog! Including news, events, and more about Miki!",
+                    usages: [
+                        {
+                            usage: ">changelog",
+                            description: "Lets miki send you the link."
+                        }
+                    ],
+                    aliases: [ "calculate" ]
+                },
+                {
+                    name: "giveaway",
+                    description: "Allows you to create a giveaway embed for your friends, communities and anything else",
+                    usages: [
+                        {
+                            usage: ">giveaway <text> [-time:{time}] [-amount:{amount}]",
+                            description: "Starts a giveaway",
+                            parameters: [   
+                                {
+                                    name: "text",
+                                    description: "pass the object you want to give away here.",
+                                    required: true
+                                },
+                                {
+                                    name: "-time",
+                                    description: "set the time with a shorthand time-only schedule (ex. 2h15m for 2 hours and 15 minutes), Default = 1h",
+                                },
+                                {
+                                    name: "-amount",
+                                    description: "set the amount of winners of the giveaway as a number. Default = 1",
+                                }
+                            ]
+                        }
+                    ],
+                },
+                {
+                    name: "guildinfo",
+                    description: "Shows information about the current discord server!",
+                    usages: [
+                        {
+                            usage: ">guildinfo",
+                            description: "Lets miki send the info"
+                        }
+                    ],
+                },
                 {
                     name: "help",
                     description: "Shows general help with commands in the bot!",
@@ -16,25 +506,92 @@
                             description: "Shows more information based on parameter 'command name'",
                             parameters: [
                                 {
-                                name: "command name",
-                                description: "any command name available for Miki",
-                                required: true
+                                    name: "command name",
+                                    description: "any command name available for Miki",
+                                    required: true
                                 }
                             ]
                         }
                     ], 
-                    aliases: [ "command", "command2" ]
                 },
                 {
-                    name: "poke",
-                    description: "Poke somebody",
+                    name: "info",
+                    description: "Shows general info about the bot!",
                     usages: [
                         {
-                            usage: ">poke",
-                            description: "XD"
+                            usage: ">info",
+                            description: "Shows you Miki's credits and version"
                         }
-                    ],
-                    aliases: [ "pok" ]
+                    ], 
+                },
+                {
+                    name: "invite",
+                    description: "Gets an Invite for Miki",
+                    usages: [
+                        {
+                            usage: ">invite",
+                            description: "Add miki to your server with this URL!"
+                        }
+                    ], 
+                },
+                {
+                    name: "ping",
+                    description: "Gets ping information from Miki",
+                    usages: [
+                        {
+                            usage: ">ping",
+                        }
+                    ], 
+                },
+                {
+                    name: "prefix",
+                    description: "Shows your current prefix on your Discord server",
+                    usages: [
+                        {
+                            usage: ">prefix",
+                        }
+                    ], 
+                },
+                {
+                    name: "stats",
+                    description: "Get a link to Miki's low-level statistics",
+                    usages: [
+                        {
+                            usage: ">stats",
+                        }
+                    ], 
+                },
+                {
+                    name: "urban",
+                    description: "Define a word from UrbanDictionary.",
+                    usages: [
+                        {
+                            usage: ">urban <word>",
+                            parameters: [
+                                {
+                                    name: "word",
+                                    description: "The word you'd like to know the definition of.",
+                                    required: true
+                                }
+                            ]
+                        }
+                    ], 
+                },
+                {
+                    name: "whois",
+                    description: "Find out about a user some more.",
+                    usages: [
+                        {
+                            usage: ">whois <@user>",
+                            parameters: [
+                                {
+                                    name: "@user",
+                                    description: "A mention of the user you'd like to know more about",
+                                    required: true
+                                }
+                            ]
+                        }
+                    ], 
                 }
             ]
         }

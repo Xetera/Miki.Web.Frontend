@@ -31,12 +31,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
         for(var post in o.posts)
         {
+            let div = new Element();
+            div.id = "div";
+
+            let link = new Element();
+            link.id = "a";
+
+            let image = new Element();
+            image.id = "img";
+            image.classList.add("image");
+            image.setAttribute("src", ghost.url + post.feature_image);
+            
+            div.appendChild(link);
+            div.appendChild(image);
+            
+
             document.getElementById("updates").append(
-                `<div>
-                    <a href="${ghost.url}${post.slug}"
-                    <img class="image" src="${ghost.url}${post.feature_image}">
-                </div>`
-            )
+                div
+            );
         }
       }
     };

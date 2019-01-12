@@ -6,12 +6,20 @@ block page
 		.container
 			h1.title.has-text-light Commands for Miki
 	.section.container.content
+		.section
+			h3 Looking for something..?
+			p.control.has-icons-left
+				input.input(placeholder="search...")
+				span.icon.is-small.is-left
+					i.fas.fa-search
 		.columns
-			.column.is-2
+			.column.is-3
 				h3 Modules
-				ul
 				each m in modules
-					li=m.name
+					label.control.has-icons-left.button(style="width: 100%;")
+						p.has-text-centered=m.name
+						span.icon.is-left
+							input(type="checkbox")
 			section.column.accordions
 				each m in modules
 					each c in m.commands
@@ -28,11 +36,14 @@ block page
 									each u in c.usages
 										.is-grouped
 											h6 #{u.usage}
-											p #{u.description}
+											if u.description
+												p #{u.description}
 										if u.parameters
 											br
 											each p in u.parameters
 												if p.required
 													p #[a.tag.is-primary required] #[b=p.name] - #{p.description}
+												else
+													p #[b=p.name] - #{p.description}
 										br
 

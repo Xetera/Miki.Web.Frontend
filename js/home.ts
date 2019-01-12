@@ -24,13 +24,13 @@ ghost.init({
 document.addEventListener("DOMContentLoaded", function() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        console.log(this.responseText);
-        
+      if (this.readyState == 4 && this.status == 200) {     
         var o = JSON.parse(this.responseText);
 
         for(var post in o.posts)
         {
+            console.log(post);
+
             let div = document.createElement("div");
 
             let link = document.createElement("a");
@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function() {
             div.appendChild(link);
             div.appendChild(image);
             
-
             document.getElementById("updates").append(
                 div
             );

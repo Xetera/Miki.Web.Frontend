@@ -1,5 +1,8 @@
 @charset "utf-8";
 
+@import "bulma/bulma.sass";
+@import "bulma/bulma-accordion.sass";
+
 $modal-background-background-color: rgba(#ffffff, 0.1);
 
 body {
@@ -22,6 +25,22 @@ a.about-link {
 
 .is-textured {
 	background-image: url('../img/waves1.png');
+}
+
+.logo
+{
+	width: 1.25rem;
+	height: 1.25rem;
+	fill: $grey-darker;
+
+	&.is-large {
+		width: 2.5rem;
+		height: 2.5rem;
+	}
+
+	&.is-light {
+		fill: white;
+	}
 }
 
 #global-nav-bar.navbar-large {
@@ -201,6 +220,3 @@ a.about-link {
         opacity: 1;
     }
 }
-
-@import "bulma/bulma.sass";
-@import "bulma/bulma-accordion.sass";

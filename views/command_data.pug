@@ -1808,10 +1808,12 @@
                 },
                 {
                     name: "guildhouse",
-                    description: "Displays information of how upgraded your guild is"
+                    description: "Displays information of how upgraded your guild is",
                     usages: [
-                        usage: ">guildhouse"
-                        description: "Displays your current weekly bonus and tier of your guild"
+                        {
+                            usage: ">guildhouse",
+                            description: "Displays your current weekly bonus and tier of your guild"
+                        }
                     ]
                 },
                 {
@@ -1839,7 +1841,7 @@
                     descriptions: "Upgrade your guild to increasae your '>guildweekly' rewards",
                     usages: [
                         {
-                            usage: ">guildupgrade <tier>"
+                            usage: ">guildupgrade <tier>",
                             description: "Upgrade your guild to a higher tier",
                             parameters: [
                                 {
@@ -1886,7 +1888,7 @@
                 },
                 {
                     name: "buymarriageslot",
-                    description: "Buy an extra marriage slot using mekos"
+                    description: "Buy an extra marriage slot using mekos",
                     usages:[
                         {
                             usage: ">buymarriageslot",
@@ -1987,7 +1989,7 @@
                 },
                 {
                     name: "showproposals",
-                    description: "Shows the proposals you sent and received"
+                    description: "Shows the proposals you sent and received",
                     usages: [
                         {
                             usage: ">showproposals",
@@ -1998,7 +2000,7 @@
             ]
         },
         {
-            name: "nsfw"
+            name: "nsfw",
             commands: [
                 {
                     name: "e621",
@@ -2137,7 +2139,7 @@
                             usage: ">hatedpasta"
                         }
                     ],
-                    aliases = ["hatedpastas", "hatepastalist"]
+                    aliases: ["hatedpastas", "hatepastalist"]
                 },
                 {
                     name: "hatepasta",
@@ -2170,7 +2172,7 @@
                             ]
                         }
                     ]
-                }
+                },
                 {
                     name: "lovedpasta",
                     description: "Displays list of pastas you like",
@@ -2179,7 +2181,7 @@
                             usage: ">lovedpasta"
                         }
                     ],
-                    aliases = ["lovedpastas", "favouritepastas", "lovepastalist"]
+                    aliases: ["lovedpastas", "favouritepastas", "lovepastalist"]
                 },
                 {
                     name: "lovepasta",
@@ -2445,7 +2447,7 @@
                             ]
                         }
                     ]
-                }
+                },
                 {
                     name: "showmodule",
                     description: "Shows what commands are enabled in the module for the channel",

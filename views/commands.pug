@@ -19,7 +19,7 @@ block page
 					label.control.has-icons-left.button(style="width: 100%;")
 						p.has-text-centered=m.name
 						span.icon.is-left
-							input(type="checkbox")
+							input(type="checkbox" onclick="")
 			section.column.accordions
 				each m in modules
 					each c in m.commands
@@ -46,4 +46,3 @@ block page
 												else
 													p #[b=p.name] - #{p.description}
 										br
-

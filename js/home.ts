@@ -3,19 +3,14 @@ let header_nav = document.getElementById("global-nav-bar");
 let logo_nav = document.getElementById("logo");
 
 header_nav.classList.add("is-dark", "navbar-large", "is-fixed-top", "is-smoother");
-logo_nav.classList.add("is-large", "is-light");
 
 window.onscroll = e => {
     if (window.scrollY > 0 && previousPosition === 0) {
         header_nav.classList.remove("navbar-large");
         header_nav.classList.remove("is-dark");
-        logo_nav.classList.remove("is-light");
-        logo_nav.classList.remove("is-large");
     } else if (window.scrollY <= 0) {
         header_nav.classList.add("navbar-large");
         header_nav.classList.add("is-dark");
-        logo_nav.classList.add("is-light");
-        logo_nav.classList.add("is-large");
     }
 
     previousPosition = window.scrollY;
@@ -32,23 +27,47 @@ document.addEventListener("DOMContentLoaded", function() {
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {     
         var o = JSON.parse(this.responseText);
-
         for(var post of o.posts)
         {
-            let div = document.createElement("div");
+            let column = document.createElement("div");
+            column.classList.add("column");
+
+            let card = document.createElement("div");
+            card.classList.add("card");
+
+            let cardImage = document.createElement("div");
+            cardImage.classList.add("card-image")
 
             let link = document.createElement("a");
-            link.setAttribute("href", "https://blog.miki.ai" + post.url);
+            link.setAttribute("href", post.url);
 
             let image = document.createElement("img");
             image.classList.add("image");
-            image.setAttribute("src", "https://blog.miki.ai" + post.feature_image);
+            image.setAttribute("src", post.feature_image);
             
-            div.appendChild(link);
-            div.appendChild(image);
+            let cardContent = document.createElement("div");
+            cardContent.classList.add("card-content");
+            cardContent.classList.add("content");
             
+            let title = document.createElement("h4");
+            title.textContent = post.title;
+
+            let desc = document.createElement("p");
+            desc.innerHTML = post.meta_description;
+        
+            link.appendChild(image);
+            cardImage.appendChild(link);
+            card.appendChild(cardImage);
+
+            cardContent.appendChild(title);
+            cardContent.appendChild(desc);
+            
+            card.appendChild(cardContent);
+
+            column.appendChild(card);
+
             document.getElementById("updates").append(
-                div
+                column
             );
         }
       }

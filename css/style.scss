@@ -1,12 +1,17 @@
 @charset "utf-8";
 
 @import "bulma/bulma.sass";
-@import "bulma/bulma-accordion.sass";
+@import "bulma/bulma-tooltip.sass";
+@import "bulma/bulma-divider.sass";
 
 $modal-background-background-color: rgba(#ffffff, 0.1);
 
 body {
 	font-family: 'Roboto', sans-serif;
+}
+
+.is-inline-block {
+	display: inline-block;
 }
 
 a.about-link {
@@ -16,6 +21,9 @@ a.about-link {
 
 .seperated {
 	margin: 1rem;
+}
+.seperated-h {
+	margin-right: 1rem;
 }
 
 .is-flex-centered {

@@ -1363,23 +1363,35 @@
                             description: "Starts a new blackjack session with Miki",
                             parameters: [
                                 {
+                                    name: "new",
+                                    constant: true
+                                },
+                                {
                                     name: "bet",
                                     description: "Amount of mekos you want to bet",
                                     required: true
-                                },
-                                {
-                                    name: "ok",
-                                    description: "You need to add 'ok' if you're planning on betting over 10,000 mekos"
                                 }
                             ]
                         },
                         {
                             usage: ">blackjack hit",
                             description: "Draw a card",
+                            parameters: [
+                                {
+                                    name: "hit",
+                                    constant: true
+                                }
+                            ]
                         },
                         {
                             usage: ">blackjack stay",
                             description: "Stand your current score before Miki tries to beat it",
+                            parameters: [
+                                {
+                                    name: "stay",
+                                    constant: true
+                                }
+                            ]
                         }
                     ],
                     aliases: ["bj"]
@@ -1545,7 +1557,6 @@
                             description: "Get your own avatar!"
                         },
                         {
-                            usage: ">avatar [mention]",
                             description: "Get someone else's avatar!",
                             parameters: [
                                 {
@@ -1555,7 +1566,6 @@
                             ]
                         },
                         {
-                            usage: ">avatar [user id]",
                             description: "Get someone else's avatar!",
                             parameters: [
                                 {
@@ -1838,7 +1848,7 @@
                 },
                 {
                     name: "guildupgrade",
-                    descriptions: "Upgrade your guild to increasae your '>guildweekly' rewards",
+                    descriptions: "Upgrade your guild to increase your '>guildweekly' rewards",
                     usages: [
                         {
                             usage: ">guildupgrade <tier>",
@@ -1860,7 +1870,7 @@
                         {
                             usage: ">guildweekly",
                             description: "Claim your weekly rewards"
-                        }             
+                        }
                     ],
                     aliases: ["weekly"]
                 }
@@ -2317,23 +2327,23 @@
                                     required: true
                                 },
                                 {
-                                    name: "-automatic:(true/false)",
+                                    name: "-automatic",
                                     description: "Sets whether the role is given when the person levels up. Ex. '-automatic:true'"
                                 },
                                 {
-                                    name: "-optable:(true/false)",
+                                    name: "-optable",
                                     description: "Sets whether the role will be displayed in '>iamlist'. Ex. '-optable:true'" 
                                 },
                                 {
-                                    name: "-level-required:(number)",
+                                    name: "-level-required",
                                     description: "Sets level requirement to obtain. Ex. '-level-required:10'"
                                 },
                                 {
-                                    name: "-role-required:(role name)",
+                                    name: "-role-required",
                                     description: "Sets what other role is required to obtain the role. Ex. '-role-required:User'"
                                 },
                                 {
-                                    name: "-price:(amount)",
+                                    name: "-price",
                                     description: "Sets amount of mekos needed to buy the role. Ex. '-price:50000'"
                                 }
                             ]

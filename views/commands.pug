@@ -1,6 +1,5 @@
 extends templates/base
 block page
-	script(src="../js/bulma-accordion.js")
 	include command_data.pug
 	.section.hero.is-textured
 		.container
@@ -9,40 +8,36 @@ block page
 		.section
 			h3 Looking for something..?
 			p.control.has-icons-left
-				input.input(placeholder="search...")
+				input.input(placeholder="search...")#searchbar
 				span.icon.is-small.is-left
 					i.fas.fa-search
 		.columns
-			.column.is-3
-				h3 Modules
-				each m in modules
-					label.control.has-icons-left.button(style="width: 100%;")
-						p.has-text-centered=m.name
-						span.icon.is-left
-							input(type="checkbox" onclick="")
-			section.column.accordions
+			section.column#commands
 				each m in modules
 					each c in m.commands
-						article.accordion(id=c.module)
-							.accordion-header.toggle
-								.level
-									h3.seperated.has-text-white >#{c.name}
-									if c.aliases
-										i or #{c.aliases.join(", ")}	
-							.accordion-content
-								section.is-small.section.accordion-body
-									p=c.description
-									h5 Usage
-									each u in c.usages
-										.is-grouped
-											h6 #{u.usage}
-											if u.description
-												p #{u.description}
-										if u.parameters
-											br
-											each p in u.parameters
-												if p.required
-													p #[a.tag.is-primary required] #[b=p.name] - #{p.description}
+						article.card(data=c.name data-module=c.module)
+							.card-content
+								.columns
+									.column.is-narrow
+										b >#{c.name}
+									.column
+										each u, i in c.usages
+												if(i != 0)
+													.is-divider(data-content="OR")
+												if u.parameters
+													each p in u.parameters
+														if p.constant
+															b.seperated-h=p.name
+														else
+															if p.required
+																a.tooltip.seperated-h.tag.is-primary(data-tooltip=p.description)=p.name
+															else
+																a.tooltip.seperated-h.tag.is-info(data-tooltip=p.description)=p.name
 												else
-													p #[b=p.name] - #{p.description}
-										br
+													a.tooltip.seperated-h.tag.is-disabled(data-tooltip="this means it has no parameters :)") none
+									.column.is-narrow
+										p=c.description
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.4/fuse.min.js")
+	script(src="../js/commands.ts")
+
+

@@ -1,12 +1,15 @@
 let commands = document.getElementById("commands");
 let searchbar = document.getElementById("searchbar");
 let allcommands = [];
+let allcommandnames = []
 for(var i = 0; i < commands.childElementCount; i++)
 {
     let item = commands.children.item(i);
+    let attr = item.getAttribute("data");
     allcommands.push({ 
-        "command": item.getAttribute("data")
+        "command": attr
     });
+    allcommandnames.push(attr)
 }
 
 console.log(allcommands);
@@ -34,8 +37,9 @@ searchbar.oninput = (ev) => {
     let results = fuse.search(searchbar.value);
     if(searchbar.value == "")
     {
-        results = allcommands;
+        results = allcommandnames;
     }
+    console.log(results);
 
     for(let i = 0; i < commands.children.length; i++)
     {

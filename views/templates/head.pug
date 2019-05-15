@@ -9,3 +9,12 @@ meta(name="theme-color" content="#F23084")
 <!-- Include page setup stuff -->
 link(rel='icon', type="image/png", href='../img/favicon.png')
 link(rel='stylesheet', type='text/css', href='../css/style.scss')
+link(rel="manifest" href="../manifest.json")
+script(src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async="")
+script
+    | var OneSignal = window.OneSignal || [];
+    | OneSignal.push(function() {
+    | OneSignal.init({
+    |   appId: "f004ee7e-c35a-4b11-a2da-a231d717630d",
+    | });
+    | });

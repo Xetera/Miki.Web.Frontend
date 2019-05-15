@@ -228,3 +228,13 @@ a.about-link {
         opacity: 1;
     }
 }
+
+.wave {
+	background: url(../img/wave.svg) repeat-x;
+	background-size: contain;
+	position:absolute;
+	width: 100000px;
+	height: 10vh;
+	top: calc(100vh - 10vh);
+	left: 0;
+}

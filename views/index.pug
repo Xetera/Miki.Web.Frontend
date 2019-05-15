@@ -15,7 +15,7 @@ mixin testimonial(q)
 				span.has-text-dark=q.desc
 
 block page
-	.section.hero.is-middle.is-textured.first
+	.section.hero.is-fullheight.is-textured.first
 		.hero-body
 			.container
 				.columns.is-vcentered
@@ -25,12 +25,16 @@ block page
 						.field.is-grouped
 							.control
 								a.button.is-large(href="/invite.pug?mikiai").is-info
-									p #[i.fab.fa-discord] Invite
+									span.icon
+										i.fab.fa-discord
+									span Invite
 							.control
 								a.button.is-large.is-white.is-outlined(href="https://discord.gg/39Xpj7K")
-									p Support
+									span Support
 					.column.is-offset-2.is-10.is-hidden-touch.is-hidden-desktop-only.image
 						img.has-shadow.is-smooth(src="../img/landing-image.png" style="border-radius: 15px")#landing-img
+		.hero-footer
+			.wave
 	.section.has-background-lighter
 		.container
 			.has-text-centered
@@ -100,7 +104,9 @@ block page
 		.hero-body
 			h2.has-text-white.title Get started with Miki!
 			a.has-shadow.button.is-large(href="https://discordapp.com/oauth2/authorize?&client_id=160185389313818624&scope=bot").seperated.is-info.is-smooth
-				p #[i.fab.fa-discord] Invite Miki!
+				span.icon.is-large
+					i.fab.fa-discord
+				span Invite Miki!
 			a.has-shadow.button.is-large(href="https://github.com/velddev/Miki/wiki").seperated.is-white.is-outlined.is-smooth
 				p Learn more
 	
@@ -108,8 +114,11 @@ block page
 	.section.content.container
 		h3.has-text-centered Latest Miki news!
 		.columns#updates
-		h4.has-text-centered Want to stay up to date?
-			input.button(type="button" value="subscribe" onclick="showHttpPrompt()")
+		div.has-text-centered
+			a.button.is-large.is-primary(onclick="OneSignal.showHttpPrompt()")
+				span.icon.is-large
+					i.fas.fa-bell
+				span Subscribe to Miki
 
 	script(type="text/javascript" src="https://blog.miki.ai/public/ghost-sdk.min.js")
 	

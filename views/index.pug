@@ -108,6 +108,8 @@ block page
 	.section.content.container
 		h3.has-text-centered Latest Miki news!
 		.columns#updates
+		h4.has-text-centered Want to stay up to date?
+			input.button(type="button" value="subscribe" onclick="showHttpPrompt()")
 
 	script(type="text/javascript" src="https://blog.miki.ai/public/ghost-sdk.min.js")
 	

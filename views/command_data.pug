@@ -1885,14 +1885,23 @@
                     usages: [
                         {
                             usage: ">acceptmarriage <mention>",
-                            description: "Accept a marriage proposal sent by a specific user",
-                            parameters:[
+                            parameters: [
                                 {
                                     name: "mention",
-                                    description: "Mention of the user",
-                                    required: true
+                                    description: "Mention of user"
                                 }
-                            ]
+                            ],
+                            required: true
+                        },
+                        {
+                            usage: ">acceptmarriage <user id>",
+                            parameters: [
+                                {
+                                    name: "user id",
+                                    description: "Discord ID of user"
+                                }
+                            ],
+                            required: true
                         }
                     ]
                 },

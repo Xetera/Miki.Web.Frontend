@@ -10,12 +10,15 @@ mixin testimonial(q)
 		figure.testimonial
 			blockquote.has-background-light=q.quote
 			.author
-				img(src=q.image alt="")
+				if q.invite
+					img.testomonial-button(src=q.image alt="")
+				else
+					img(src=q.image alt="")
 				h5.has-text-black=q.name
 				span.has-text-dark=q.desc
 
 block page
-	.section.hero.is-fullheight.is-textured.first
+	.hero.is-fullheight.is-textured.first
 		.hero-body
 			.container
 				.columns.is-vcentered
@@ -82,10 +85,11 @@ block page
 				.section.content-wrapper
 					.columns.is-vcentered
 						+testimonial({
-							quote: "Our server was losing its foundation until Miki came aboard, the community was united with all of its unique features and brought new friendships all-around!",
+							quote: "Miki was the first bot we brought into our server. While we have plenty of bots now, Miki is one of our favorites. Our community's most used command, you ask? Either marry or profile, but she's great for all sorts of things.",
 							image: "https://cdn.miki.ai/web/landing/guilds/guild-kibii.png",
-							name: "bin",
-							desc: "Kibii TV"
+							name: "Gaby",
+							desc: "Mystic Messenger",
+							invite: "https://discord.gg/kbnFcz9"
 						})
 						+testimonial({
 							quote: "Miki helps keep the flow of conversations going with her wide variety of fun commands in our server. She's great for small and large servers alike, providing both entertainment and utility!",

@@ -7,6 +7,19 @@
 module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
-    `gatsby-plugin-typescript`
+    `gatsby-plugin-typescript`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "Miki: the Discord bot!",
+        short_name: "Miki",
+        theme_color: "#f23084",
+        background_color: "#2196f3",
+        display: "browser",
+        orientation: "portrait",
+        start_url: "/",
+        icon: "static/miki_avatar.png"
+      }
+    }
   ]
 }

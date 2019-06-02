@@ -4,9 +4,7 @@ import { Route } from "react-router";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Home } from "./home";
 
-export default () => <Root/>;
-
-export class Root extends React.Component {
+export default class Root extends React.Component {
     render() {
         return <Router>
             <div>

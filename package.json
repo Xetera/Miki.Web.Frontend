@@ -13,13 +13,13 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
-    "@types/reach__router": "^1.2.4",
     "gatsby": "^2.8.2",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "@types/reach__router": "^1.2.4",
     "@types/react-router-dom": "^4.3.3",
     "bulma": "^0.7.5",
     "bulma-extensions": "^6.2.7",
@@ -27,7 +27,6 @@
     "gatsby-plugin-sass": "^2.0.11",
     "gatsby-plugin-typescript": "^2.0.15",
     "prettier": "^1.17.1",
-    "react-router-dom": "^5.0.0",
     "sass": "^1.20.3"
   },
   "repository": {

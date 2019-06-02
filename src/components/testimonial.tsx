@@ -1,13 +1,13 @@
-import React from "react";
+import * as React from "react";
 
-export interface TestimonialProps {
+interface TestimonialProps {
     quote: string,
     imageURL: string,
     imageAlt: string,
     name: string
 }
 
-export class TestimonialComponent extends React.Component<TestimonialProps> {
+export default class TestimonialComponent extends React.Component<TestimonialProps> {
     render() {
         return <div className="column is-4">
             <figure className="testimonial">

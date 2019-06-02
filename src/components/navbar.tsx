@@ -1,11 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import * as React from "react";
+import { Link } from "gatsby";
 
-export interface NavbarState {
+interface NavbarState {
     active: boolean
 }
 
-export class NavbarComponent extends React.Component<{}, NavbarState> {
+export default class NavbarComponent extends React.Component<{}, NavbarState> {
     constructor(props) {
         super(props);
         this.state = {
@@ -59,12 +59,12 @@ export class NavbarComponent extends React.Component<{}, NavbarState> {
     }
 }
 
-export interface NavbarItemProps {
+interface NavbarItemProps {
     href: string,
     value: string
 }
 
-export class NavbarItemComponent extends React.Component<NavbarItemProps> {
+class NavbarItemComponent extends React.Component<NavbarItemProps> {
     render() {
         if(this.props.href.startsWith("http"))
         {

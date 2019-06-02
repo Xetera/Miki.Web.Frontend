@@ -1,12 +1,13 @@
-import React from "react";
+import * as React from "react";
 import LandingImage from "../img/landing-image.png";
-import { TestimonialComponent } from "./components/testimonial";
+import TestimonialComponent from "./testimonial";
+import { RouteComponentProps } from "@reach/router";
 
 const landingImageStyle = {
     borderRadius: "15px"
 }
 
-export class Home extends React.Component {
+export default class Home extends React.Component<RouteComponentProps> {
     constructor(props) {
         super(props);
         this.onLoad = this.onLoad.bind(this);

@@ -1,3 +1,9 @@
+# React
+.vscode/
+.idea/
+dist/
+
+
 # Logs
 logs
 *.log

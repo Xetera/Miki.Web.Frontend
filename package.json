@@ -1,38 +1,35 @@
 {
-  "name": "miki.web.frontend",
-  "version": "1.0.0",
-  "description": "The official repository for Miki.ai's frontend code. Collaborate and post issues here related to the current website version.",
-  "main": "index.js",
+  "name": "gatsby-starter-hello-world",
+  "private": true,
+  "description": "A simplified bare-bones starter for Gatsby",
+  "version": "0.1.0",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel views/index.pug",
-    "build": "parcel build views/legal.pug views/index.pug views/404.pug views/500.pug --public-url ./"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "dependencies": {
+    "gatsby": "^2.8.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^4.3.3",
+    "gatsby-plugin-sass": "^2.0.11",
+    "gatsby-plugin-typescript": "^2.0.15",
+    "prettier": "^1.17.1",
+    "react-router-dom": "^5.0.0",
+    "sass": "^1.20.3"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mikibot/Miki.Web.Frontend.git"
+    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Mikibot/Miki.Web.Frontend/issues"
-  },
-  "homepage": "https://github.com/Mikibot/Miki.Web.Frontend#readme",
-  "dependencies": {
-    "bulma": "^0.7.2",
-    "bulma-accordion": "^2.0.1",
-    "bulma-divider": "^0.2.0",
-    "bulma-tooltip": "^2.0.2",
-    "fuse.js": "^3.4.4",
-    "node-sass": "^4.11.0",
-    "node-static": "^0.7.11",
-    "parcel-bundler": "^1.11.0"
-  },
-  "devDependencies": {
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "pug": "^2.0.3",
-    "typescript": "^3.2.2"
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }

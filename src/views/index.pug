@@ -33,8 +33,6 @@ block page
 									span Support
 					.column.is-offset-2.is-10.is-hidden-touch.is-hidden-desktop-only.image
 						img.has-shadow.is-smooth(src="../img/landing-image.png" style="border-radius: 15px")#landing-img
-		.hero-footer
-			.wave
 	.section.has-background-lighter
 		.container
 			.has-text-centered
@@ -115,10 +113,10 @@ block page
 		h3.has-text-centered Latest Miki news!
 		.columns#updates
 		div.has-text-centered
-			a.button.is-large.is-primary(onclick="OneSignal.showHttpPrompt()")
+			a.button.is-large.is-outlined.is-primary(onclick="OneSignal.showHttpPrompt()")
 				span.icon.is-large
 					i.fas.fa-bell
-				span Subscribe to Miki
+				span Subscribe
 
 	script(type="text/javascript" src="https://blog.miki.ai/public/ghost-sdk.min.js")
 	

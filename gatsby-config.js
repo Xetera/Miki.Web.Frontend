@@ -15,9 +15,8 @@ module.exports = {
         short_name: "Miki",
         theme_color: "#f23084",
         background_color: "#2196f3",
-        display: "browser",
+        display: "standalone",
         orientation: "portrait",
-        start_url: "/",
         icon: "static/miki_avatar.png"
       }
     }

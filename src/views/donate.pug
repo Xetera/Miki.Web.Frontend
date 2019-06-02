@@ -1,0 +1,65 @@
+extends templates/base
+
+mixin reward(title, description, icons)
+	.section.card
+		.columns
+			.column.is-4.has-text-centered(style="margin: auto;")
+				span.fa-stack.fa-3x
+					for i in icons
+						i(class=i)
+			.column
+				h4=title
+				p=description
+				a.button.is-outlined
+					p Preview
+		block modal
+
+block page
+	.section.hero.is-medium.is-textured
+		.container.content
+			h1.has-text-light Feeling generous?
+			p.has-text-light Miki is a bot that is growing very fast, and to maintain a bot this big I have to take a lot of time from my daily life and focus on improving Miki for you all to enjoy. Therefore I've set up a few ways for you, the user to donate and support Miki.
+
+	.content.section.container
+		p Miki uses Patreon as her main source of funding to be able to stay up, functional, and to pay artists, freelancers or designers to keep the platform as high quality as it could possibly be.
+		.columns.is-vcentered
+			.column
+				+reward(
+					"Commands",
+					"As an active donator you will get access to our more process-heavy commands.",
+					[
+						"fas fa-terminal fa-stack-1x"
+					]
+				)
+			.column
+				+reward(
+					"Doubled daily rewards",
+					"your daily rewards (+ streaks) will be doubled! This means that instead of 100 mekos, you gain 200.",
+					[
+						"is-green fas fa-money-bill-wave fa-stack-1x"
+					]
+				)
+		.columns.is-vcentered
+			.column
+				+reward(
+					"A special achievement",
+					"Show off your patronage by showing off your cool donator profile badge! Use it to impress your friends!",
+					[
+						"is-red fas fa-heart fa-stack-1x"
+					]
+				)
+		.has-text-centered
+			p
+				a.seperated.button.is-large(
+					style="color: white; background-color: rgb(236, 108, 88);" 
+					href="https://www.patreon.com/bePatron?u=2542689", 
+					data-patreon-widget-type="become-patron-button" 
+					target="_blank" 
+					rel="noopener")
+					span.icon
+						i.fab.fa-patreon
+					span Become a patron
+				a.seperated.button.is-large(style="color: white; background-color: rgb(100, 157, 189);" href="https://ko-fi.com/velddy" target="_blank" rel="noopener")
+					span.icon
+						i.fas.fa-coffee
+					span Buy me a coffee

@@ -1,5 +1,4 @@
 {
-	"include": ["./js"],
 	"compilerOptions": {
 		"lib": ["dom", "es6"],
 		"target": "es3",
